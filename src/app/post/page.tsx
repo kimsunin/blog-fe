@@ -10,7 +10,7 @@ export default function Page() {
 
 
 async function Data() {
-  const res = await fetch("http://localhost:3000/api");
+  const res = await fetch("https://blog-demo-psi-nine.vercel.app:3000/api");
   const data = await res.json();
 
 
