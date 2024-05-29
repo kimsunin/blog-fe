@@ -1,0 +1,18 @@
+@screen pc {
+  .header_inner {
+    @apply w-full h-full flex justify-between items-center;
+  }
+  .header_inner > a {
+    @apply flex items-center;
+  }
+
+  .header_inner > a > span {
+    @apply ml-[10px] text-[18px];
+  }
+  .header_inner > button {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+  }
+  .header_inner > button:hover {
+    @apply bg-black/5;
+  }
+}

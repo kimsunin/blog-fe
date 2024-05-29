@@ -1,0 +1,5 @@
+@screen pc {
+  .home_section {
+    @apply mt-[60px];
+  }
+}
