@@ -1,7 +1,7 @@
 import HomeIc from "./favicon.svg";
 import MenuIc from "./menu.svg";
-import LigthIc from "./light.svg";
+import LightIc from "./light.svg";
+import DarkIco from "./dark.svg";
+import DarkHomeIc from "./darkhome.svg";
 
-export { HomeIc };
-export { MenuIc };
-export { LigthIc };
+export { HomeIc, DarkIco, MenuIc, LightIc, DarkHomeIc };

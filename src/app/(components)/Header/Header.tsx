@@ -2,21 +2,22 @@
 import { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
-import { HomeIc, LigthIc } from "svg/index";
+import { HomeIc, DarkHomeIc } from "svg/index";
+
+import ThemeSwitch from "@/common/components/ThemeSwitch/ThemeSwitch";
+import { useTheme } from "next-themes";
 
 function Header() {
-  const [isClick, setIsClick] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   return (
     <header id="header">
       <div className={styles.header_inner}>
         <Link href="/">
-          <HomeIc />
+          {theme == "light" ? <HomeIc /> : <DarkHomeIc />}
           <span>Mega Dev</span>
         </Link>
-        <button>
-          <LigthIc />
-        </button>
+        <ThemeSwitch />
       </div>
     </header>
   );

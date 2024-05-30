@@ -1,0 +1,3 @@
+.root_container {
+  @apply w-[50%] mx-auto mt-[100px];
+}

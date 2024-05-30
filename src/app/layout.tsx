@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import React from "react";
 import { Inter } from "next/font/google";
-
 import "./globals.css";
-import Header from "./(components)/Header/Header";
+
+import { ThemeProvider } from "@/common/components/ThemeProvider/ThemeProvider";
+import RootContainer from "@/common/components/RootContainer/RootContainer";
+import BlurLayer from "@/common/components/BlurLayer/BlurLayer";
 
 const inter = Inter({ subsets: ["latin"], weight: "300" });
 
@@ -23,11 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div id="blur_layer" />
-        <div id="container">
-          <Header />
-          {children}
-        </div>
+        <ThemeProvider>
+          <BlurLayer />
+          <RootContainer>{children}</RootContainer>
+        </ThemeProvider>
       </body>
     </html>
   );
