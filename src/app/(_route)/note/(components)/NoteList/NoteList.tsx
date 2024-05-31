@@ -1,20 +1,19 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "./NoteList.module.css";
-
 import Link from "next/link";
-import noteListData from "@/db/note/noteList.json";
 
 const getData = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/note");
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "note");
     const data = res.json();
     return data;
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 };
 
+// main component
 function NoteList() {
   const [data, setData] = useState<NoteListType>();
   const [visible, setVisible] = useState(false);
