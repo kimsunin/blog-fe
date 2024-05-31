@@ -1,0 +1,35 @@
+@screen pc {
+  .note_list > div {
+    @apply mt-[20px];
+  }
+  .note_list > div > hr {
+    @apply my-[10px];
+  }
+  .note_list > div > ul > li {
+    @apply mt-[10px] flex justify-between;
+  }
+}
+
+@screen tablet {
+  .note_list > div {
+    @apply mt-[20px];
+  }
+  .note_list > div > hr {
+    @apply my-[10px];
+  }
+  .note_list > div > ul > li {
+    @apply mt-[10px] flex justify-between;
+  }
+}
+
+@screen mobile {
+  .note_list > div {
+    @apply mt-[20px];
+  }
+  .note_list > div > hr {
+    @apply my-[10px];
+  }
+  .note_list > div > ul > li {
+    @apply mt-[10px] flex justify-between;
+  }
+}

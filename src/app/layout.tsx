@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
-import { ThemeProvider } from "@/common/components/ThemeProvider/ThemeProvider";
-import RootContainer from "@/common/components/RootContainer/RootContainer";
-import BlurLayer from "@/common/components/BlurLayer/BlurLayer";
+import ThemeProvider from "./(components)/ThemeProvider/ThemeProvider";
+import RootContainer from "./(components)/RootContainer/RootContainer";
+import BlurLayer from "./(components)/BlurLayer/BlurLayer";
 
 const inter = Inter({ subsets: ["latin"], weight: "300" });
 

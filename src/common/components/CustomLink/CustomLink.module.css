@@ -1,0 +1,17 @@
+@screen pc {
+  .custom_link > label {
+    @apply mr-[4px] cursor-pointer font-[500];
+  }
+}
+
+@screen tablet {
+  .custom_link > label {
+    @apply mr-[4px] cursor-pointer font-[500];
+  }
+}
+
+@screen mobile {
+  .custom_link > label {
+    @apply mr-[4px] cursor-pointer font-[500];
+  }
+}

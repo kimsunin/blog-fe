@@ -1,0 +1,35 @@
+@screen pc {
+  .footer {
+    @apply w-full mt-[40px];
+  }
+  .footer > div {
+    @apply mt-[10px];
+  }
+  .footer > div > a {
+    @apply p-[4px] mr-[6px];
+  }
+}
+
+@screen tablet {
+  .footer {
+    @apply w-full mt-[40px];
+  }
+  .footer > div {
+    @apply mt-[10px];
+  }
+  .footer > div > a {
+    @apply p-[4px]  mr-[6px];
+  }
+}
+
+@screen mobile {
+  .footer {
+    @apply w-full mt-[40px];
+  }
+  .footer > div {
+    @apply mt-[10px];
+  }
+  .footer > div > a {
+    @apply p-[4px]  mr-[6px];
+  }
+}

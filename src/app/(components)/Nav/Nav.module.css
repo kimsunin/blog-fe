@@ -1,0 +1,35 @@
+@screen pc {
+  .nav {
+    @apply mt-[40px];
+  }
+  .nav > ul > li {
+    @apply my-[10px] flex;
+  }
+  .nav > ul > li > div {
+    @apply min-w-[100px];
+  }
+}
+
+@screen tablet {
+  .nav {
+    @apply mt-[40px];
+  }
+  .nav > ul > li {
+    @apply my-[10px] flex;
+  }
+  .nav > ul > li > div {
+    @apply min-w-[100px];
+  }
+}
+
+@screen mobile {
+  .nav {
+    @apply mt-[40px];
+  }
+  .nav > ul > li {
+    @apply my-[10px] flex;
+  }
+  .nav > ul > li > div {
+    @apply min-w-[100px];
+  }
+}

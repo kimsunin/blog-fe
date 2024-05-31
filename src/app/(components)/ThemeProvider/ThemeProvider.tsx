@@ -3,7 +3,7 @@ import {useState, useEffect} from "react"
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { type ThemeProviderProps } from 'next-themes/dist/types';
  
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [isMount, setMount] = useState(false)
 
   useEffect(() => {
@@ -20,3 +20,5 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
     </NextThemesProvider>
   );
 }
+
+export default ThemeProvider

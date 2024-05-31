@@ -1,0 +1,21 @@
+.root_container {
+  @apply transition-w duration-500 font-mono;
+}
+
+@screen pc {
+  .root_container {
+    @apply w-[50%] mx-auto mt-[100px];
+  }
+}
+
+@screen tablet {
+  .root_container {
+    @apply w-[70%] mx-auto mt-[100px];
+  }
+}
+
+@screen mobile {
+  .root_container {
+    @apply w-[90%] mx-auto mt-[100px];
+  }
+}

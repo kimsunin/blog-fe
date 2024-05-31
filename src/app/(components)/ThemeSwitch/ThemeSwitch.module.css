@@ -1,0 +1,26 @@
+@screen pc {
+  .theme_switch {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md duration-300;
+  }
+  .theme_switch:hover {
+    @apply duration-300;
+  }
+}
+
+@screen tablet {
+  .theme_switch {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md duration-300;
+  }
+  .theme_switch:hover {
+    @apply duration-300;
+  }
+}
+
+@screen mobile {
+  .theme_switch {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md duration-300;
+  }
+  .theme_switch:hover {
+    @apply duration-300;
+  }
+}
