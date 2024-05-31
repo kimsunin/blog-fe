@@ -17,9 +17,13 @@ const getData = async () => {
 
 function NoteList() {
   const [data, setData] = useState<NoteListType>();
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    getData().then((res) => setData(res));
+    getData().then((res) => {
+      setData(res);
+      setVisible(true);
+    });
   }, []);
 
   const contentList = (content: ContentType) => (
@@ -41,7 +45,13 @@ function NoteList() {
     </div>
   ));
 
-  return <article className={styles.note_list}>{noteList}</article>;
+  return (
+    <article
+      className={`${styles.note_list} ${visible ? "isvisible" : "isinvisible"}`}
+    >
+      {noteList}
+    </article>
+  );
 }
 
 export default NoteList;

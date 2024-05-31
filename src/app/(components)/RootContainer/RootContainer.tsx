@@ -1,6 +1,5 @@
 import Header from "@/app/(components)/Header/Header";
 import styles from "./RootContainer.module.css";
-import Footer from "@/app/(components)/Footer/Footer";
 import Nav from "../Nav/Nav";
 
 function RootContainer({
@@ -13,7 +12,6 @@ function RootContainer({
       <Header />
       <Nav />
       {children}
-      <Footer />
     </div>
   );
 }

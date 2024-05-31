@@ -3,13 +3,19 @@
 @tailwind utilities;
 
 #main {
-  @apply mt-[40px] duration-1000;
+  @apply mt-[40px];
 }
 a {
   @apply px-[4px] transition-bg duration-300 rounded-md inline-flex items-center;
 }
 a:hover {
   @apply transition-bg duration-300;
+}
+.isvisible {
+  @apply opacity-100 duration-1000;
+}
+.isinvisible {
+  @apply opacity-0;
 }
 
 /* 라이트모드 */
