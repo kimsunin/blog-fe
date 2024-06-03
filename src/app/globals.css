@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 #main {
-  @apply mt-[40px];
+  @apply mt-[40px] mb-[80px];
 }
 a {
   @apply px-[4px] transition-bg duration-300 rounded-md inline-flex items-center;
@@ -42,6 +42,9 @@ a:hover {
 .light a:hover {
   @apply bg-black/10;
 }
+.light pre {
+  @apply bg-black/5;
+}
 
 /* 다크모드 */
 .dark {
@@ -66,4 +69,7 @@ a:hover {
 }
 .dark a:hover {
   @apply bg-white/20;
+}
+.dark pre {
+  @apply bg-white/10;
 }

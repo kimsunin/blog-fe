@@ -1,0 +1,23 @@
+.markdownview * {
+  @apply my-[20px] text-[14px];
+}
+
+.markdownview h1 {
+  @apply text-[20px];
+}
+
+.markdownview h2 {
+  @apply text-[18px];
+}
+
+.markdownview h3 {
+  @apply text-[16px];
+}
+
+.markdownview pre {
+  @apply px-[10px] p-[6px] overflow-hidden whitespace-pre-wrap rounded-md;
+}
+
+.markdownview img {
+  @apply w-full object-cover rounded-md;
+}

@@ -3,16 +3,6 @@ import { useState, useEffect } from "react";
 import styles from "./NoteList.module.css";
 import Link from "next/link";
 
-const getData = async () => {
-  try {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "note");
-    const data = res.json();
-    return data;
-  } catch (e) {
-    console.log(e);
-  }
-};
-
 // main component
 function NoteList() {
   const [data, setData] = useState<NoteListType>();
@@ -52,5 +42,15 @@ function NoteList() {
     </article>
   );
 }
+
+const getData = async () => {
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "note");
+    const data = res.json();
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export default NoteList;
