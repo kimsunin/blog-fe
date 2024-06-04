@@ -22,17 +22,6 @@ a:hover {
 .light {
   @apply text-black/80;
 }
-.light .blur_layer {
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0) 10%,
-    rgba(255, 255, 255, 0.2) 20%,
-    rgba(255, 255, 255, 0.4) 40%,
-    rgba(255, 255, 255, 0.6) 60%,
-    rgba(255, 255, 255, 0.8) 80%,
-    rgba(255, 255, 255, 1) 100%
-  );
-}
 .light hr {
   @apply border-black/10;
 }
@@ -49,17 +38,6 @@ a:hover {
 /* 다크모드 */
 .dark {
   @apply text-white/80;
-}
-.dark .blur_layer {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0) 10%,
-    rgba(0, 0, 0, 0.2) 20%,
-    rgba(0, 0, 0, 0.4) 40%,
-    rgba(0, 0, 0, 0.6) 60%,
-    rgba(0, 0, 0, 0.8) 80%,
-    rgba(0, 0, 0, 1) 100%
-  );
 }
 .dark hr {
   @apply border-white/20;

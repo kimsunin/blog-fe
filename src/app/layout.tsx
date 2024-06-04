@@ -6,7 +6,10 @@ import ThemeProvider from "./(components)/ThemeProvider/ThemeProvider";
 import RootContainer from "./(components)/RootContainer/RootContainer";
 import BlurLayer from "./(components)/BlurLayer/BlurLayer";
 
-const inter = Inter({ subsets: ["latin"], weight: "300" });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: "300",
+});
 
 export const metadata: Metadata = {
   title: "Mega Dev",
