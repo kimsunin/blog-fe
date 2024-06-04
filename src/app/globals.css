@@ -31,9 +31,7 @@ a:hover {
 .light a:hover {
   @apply bg-black/10;
 }
-.light .located {
-  @apply bg-black/5;
-}
+
 .light pre {
   @apply bg-black/5;
 }
@@ -51,10 +49,6 @@ a:hover {
 .dark a:hover {
   @apply bg-white/20;
 }
-.dark .located {
-  @apply bg-white/10;
-}
-
 .dark pre {
   @apply bg-white/10;
 }
