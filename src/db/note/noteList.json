@@ -1,9 +1,6 @@
 [
   {
     "year": "2024",
-    "content": [
-      { "id": 2, "title": "[next js] md 다루기", "data": "06. 03." },
-      { "id": 1, "title": "[next js] 라우팅", "data": "06. 03." }
-    ]
+    "content": [{ "id": 1, "title": "[blog] 시작하다", "data": "06. 03." }]
   }
 ]

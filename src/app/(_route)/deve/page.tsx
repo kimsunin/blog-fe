@@ -15,14 +15,14 @@ function Page() {
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
-      <ContentList type="note" data={data} />
+      <ContentList type="deve" data={data} />
     </section>
   );
 }
 
 const getData = async () => {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "note");
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "deve");
     const data = res.json();
     return data;
   } catch (e) {
