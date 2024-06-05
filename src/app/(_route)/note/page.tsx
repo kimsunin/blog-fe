@@ -20,14 +20,14 @@ function Page() {
   );
 }
 
-const getData = async () => {
+async function getData() {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "note");
-    const data = res.json();
+    const data = await res.json();
     return data;
   } catch (e) {
     console.log(e);
   }
-};
+}
 
 export default Page;

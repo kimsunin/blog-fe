@@ -1,4 +1,3 @@
-"use client";
 import styles from "./ContentList.module.css";
 import Link from "next/link";
 
