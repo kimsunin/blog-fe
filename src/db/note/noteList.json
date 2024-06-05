@@ -1,6 +1,9 @@
 [
   {
     "year": "2024",
-    "content": [{ "id": 1, "title": "[blog] 시작하다", "data": "06. 03." }]
+    "content": [
+      { "id": 2, "title": "[blog] 블로그소개", "data": "06. 05." },
+      { "id": 1, "title": "[blog] 시작하다", "data": "06. 03." }
+    ]
   }
 ]

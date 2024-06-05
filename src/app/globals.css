@@ -2,53 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-#main {
+body {
+  @apply scroll-smooth text-black/80 dark:text-white/80;
+}
+main {
   @apply mt-[40px] mb-[80px];
 }
 a {
-  @apply px-[4px] transition-bg duration-300 rounded-md inline-flex items-center;
+  @apply px-[4px] transition duration-300 rounded-md inline-flex items-center;
 }
-a:hover {
-  @apply transition-bg duration-300;
+a:hover,
+button:hover {
+  @apply transition duration-300 scale-105 bg-black/5 dark:bg-white/10;
 }
+button {
+  @apply transition duration-300;
+}
+
+hr {
+  @apply border-black/5 dark:border-white/10;
+}
+pre {
+  @apply bg-black/5 dark:bg-white/10;
+}
+
 .isvisible {
   @apply opacity-100 duration-1000;
 }
 .isinvisible {
   @apply opacity-0;
 }
-
-/* 라이트모드 */
-.light {
-  @apply text-black/80;
-}
-.light hr {
-  @apply border-black/10;
-}
-.light button:hover {
-  @apply bg-black/10;
-}
-.light a:hover {
-  @apply bg-black/10;
-}
-
-.light pre {
-  @apply bg-black/5;
-}
-
-/* 다크모드 */
-.dark {
-  @apply text-white/80;
-}
-.dark hr {
-  @apply border-white/20;
-}
-.dark button:hover {
-  @apply bg-white/20;
-}
-.dark a:hover {
-  @apply bg-white/20;
-}
-.dark pre {
-  @apply bg-white/10;
+.located {
+  @apply bg-black/5 dark:bg-white/10;
 }

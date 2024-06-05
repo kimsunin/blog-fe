@@ -16,7 +16,7 @@ function CustomLink({ label, href }: PropsType) {
     <Link
       className={`${styles.custom_link} ${
         pathName !== "/" && pathName.split("/").slice(0, 2).join("/") == href
-          ? "underline"
+          ? "located"
           : ""
       }`}
       href={href}

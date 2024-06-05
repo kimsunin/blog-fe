@@ -12,7 +12,7 @@ function Page({ params }: { params: { id: string } }) {
       setData(res);
       setVisible(true);
     });
-  }, []);
+  }, [params.id]);
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
