@@ -9,14 +9,17 @@ main {
   @apply mt-[40px] mb-[80px];
 }
 a {
-  @apply px-[4px] transition duration-300 rounded-md inline-flex items-center;
+  @apply px-[4px] duration-300 rounded-md inline-flex items-center;
+  transition-property: background-color, transform;
 }
 a:hover,
 button:hover {
-  @apply transition duration-300 scale-105 bg-black/5 dark:bg-white/10;
+  @apply duration-300 scale-105 bg-black/5 dark:bg-white/10;
+  transition-property: background-color, transform;
 }
 button {
-  @apply transition duration-300;
+  @apply duration-300;
+  transition-property: background-color, transform;
 }
 
 hr {
