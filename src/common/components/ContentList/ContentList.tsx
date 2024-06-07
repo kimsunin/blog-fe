@@ -20,7 +20,7 @@ function ContentList({ type, data }: PropsType) {
 
   const contentList = data?.map((item, index) => (
     <div key={index}>
-      <h1>{item.year}</h1>
+      <span>{item.year}</span>
       <hr />
       {subContentList(item.content)}
     </div>

@@ -1,9 +1,7 @@
 import styles from "./BlurLayer.module.css";
 
 function BlurLayer() {
-  return (
-    <div className={`${styles.blur_layer} blur_layer`} aria-hidden={true}></div>
-  );
+  return <div className={styles.blur_layer} aria-hidden={true}></div>;
 }
 
 export default BlurLayer;
