@@ -17,7 +17,7 @@ export async function GET(
       `${id}.md`
     );
     const data = await fs.readFile(filePath, "utf-8");
-    return NextResponse.json(data);
+    return NextResponse.json({ data: data }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }

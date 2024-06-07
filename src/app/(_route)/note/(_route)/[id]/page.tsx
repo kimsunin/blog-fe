@@ -9,7 +9,7 @@ function Page({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     getData(params.id).then((res) => {
-      setData(res);
+      setData(res.data);
       setVisible(true);
     });
   }, [params.id]);

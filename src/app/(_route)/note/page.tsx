@@ -8,7 +8,7 @@ function Page() {
 
   useEffect(() => {
     getData().then((res) => {
-      setData(res);
+      setData(res.data);
       setVisible(true);
     });
   }, []);
