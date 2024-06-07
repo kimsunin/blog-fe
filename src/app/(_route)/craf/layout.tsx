@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "MD | deve",
 };
 
-export default function NoteLayout({
+export default function CrafLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

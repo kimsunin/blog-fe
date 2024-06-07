@@ -9,5 +9,5 @@ export default function NoteLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main id="main">{children}</main>;
+  return <main>{children}</main>;
 }
