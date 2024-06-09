@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MD | deve",
+  title: "MD | craf",
 };
 
 export default function CrafLayout({

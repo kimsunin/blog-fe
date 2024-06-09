@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import styles from "./page.module.css";
 import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
 
 function Page({ params }: { params: { id: string } }) {
@@ -16,7 +15,7 @@ function Page({ params }: { params: { id: string } }) {
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
-      <article className={styles.note_list}>
+      <article>
         <MarkDownView post={data} />
       </article>
     </section>
