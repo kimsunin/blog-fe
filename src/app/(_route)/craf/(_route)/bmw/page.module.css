@@ -1,0 +1,7 @@
+.bmw_game {
+  @apply w-full h-[200px] relative bg-slate-100;
+}
+
+.bmw {
+  @apply w-[40px] h-[20px] absolute bg-blue-400;
+}
