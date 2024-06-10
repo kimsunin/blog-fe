@@ -3,14 +3,37 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
 function Canvas() {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [start, setStart] = useState(false);
   const [end, setEnd] = useState(false);
   const [bmw, setBmw] = useState({ x: 0, y: 40 });
   const [hds, setHds] = useState<{ x: number; y: number }[]>([]);
   const [time, setTime] = useState(0);
+  const [speed, setSpeed] = useState(50);
 
+  // canvas생성 및 속성부여
+  useEffect(() => {
+    const canvas = canvasRef.current as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+    canvas.style.width = "100%";
+    canvas.height = 100;
+    if (ctx) {
+      ctx.fillStyle = `${
+        theme == "light" ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.8)"
+      }`;
+    }
+  }, [theme]);
+
+  //  자동차 생성
+  useEffect(() => {
+    hdsDraw();
+  }, [time, theme]);
+  const bmwDraw = () => {
+    const canvas = canvasRef.current as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d");
+    ctx?.fillRect(0, bmw.y, 24, 20);
+  };
   const hdsDraw = () => {
     const canvas = canvasRef.current as HTMLCanvasElement;
     const ctx = canvas.getContext("2d");
@@ -34,33 +57,7 @@ function Canvas() {
     }
   };
 
-  const startGame = () => {
-    if (end) {
-      setBmw({ x: 0, y: 40 });
-      setHds([]);
-      setTime(0);
-      setStart(true);
-    } else {
-      setStart(!start);
-    }
-  };
-
-  const crash = () => {
-    hds.forEach((hd) => {
-      if (hd.x <= 38 && hd.y >= bmw.y && hd.y < bmw.y + 20) {
-        console.log("충돌");
-        setStart(false);
-        setEnd(true);
-      }
-    });
-  };
-
-  const bmwDraw = () => {
-    const canvas = canvasRef.current as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d");
-    ctx?.fillRect(0, bmw.y, 24, 20);
-  };
-
+  // 이동
   const move = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (start) {
       if (e.key == "ArrowUp" && bmw.y > 0) {
@@ -72,30 +69,46 @@ function Canvas() {
     }
   };
 
-  useEffect(() => {
-    const canvas = canvasRef.current as HTMLCanvasElement;
-    const ctx = canvas.getContext("2d");
-    canvas.style.width = "100%";
-    canvas.height = 100;
-    if (ctx) {
-      ctx.fillStyle = `${
-        theme == "light" ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.8)"
-      }`;
+  // 게임시작
+  const startGame = () => {
+    if (end) {
+      setBmw({ x: 0, y: 40 });
+      setHds([]);
+      setTime(0);
+      setSpeed(50);
+      setEnd(false);
+      setStart(true);
+    } else {
+      setStart(!start);
     }
-  }, [theme]);
+  };
 
+  // 게임종료
+  const crash = () => {
+    hds.forEach((hd) => {
+      if (hd.x <= 38 && hd.y >= bmw.y && hd.y < bmw.y + 20) {
+        console.log("충돌");
+        setStart(false);
+        setEnd(true);
+      }
+    });
+  };
+
+  // 카운트
   useEffect(() => {
     if (start) {
       const id = setInterval(() => {
         setTime((pre) => pre + 1);
-      }, 50);
+        // 스피드가 계속 빨라지게 구현
+        setSpeed((pre) => pre - 0.01);
+        // 360에 한번 테마 바구기
+        if (time != 0 && time % 360 == 0) {
+          setTheme(theme == "light" ? "dark" : "light");
+        }
+      }, speed);
       return () => clearInterval(id);
     }
   }, [time, start]);
-
-  useEffect(() => {
-    hdsDraw();
-  }, [time, theme]);
 
   return (
     <div

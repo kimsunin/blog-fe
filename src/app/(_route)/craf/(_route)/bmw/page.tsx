@@ -2,7 +2,7 @@ import Canvas from "../../(components)/Canvas/Canvas";
 
 function Page() {
   return (
-    <section>
+    <section className="isvisible">
       <Canvas />
     </section>
   );
