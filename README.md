@@ -8,8 +8,6 @@ https://megadev.me
 
 <hr>
 
-- [x]
-
 #### [번외] Dark Mode
 
 - 블로그 최상단에 위치한 태양, 달 로고로 다크모드 전환
