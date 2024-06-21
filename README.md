@@ -1,60 +1,65 @@
 # Mega Dev
 
-https://megadev.me
+[https://megadev.me](https://megadev.me)
 
-### 김선인의 개발공간
+---
 
-나의 개발에 관한 모든 고민과 고찰을 기록하고 기억하기 위한 공간
+### Develop space of kimsunin
 
-<hr>
+- 개발에 관한 모든 고민과 고찰을 기록하고 기억하기 위한 공간
 
-#### [번외] Dark Mode
+---
 
-- 블로그 최상단에 위치한 태양, 달 로고로 다크모드 전환
+### [번외]
 
-- 클릭시 각각 테마에 맞게 최상위 html요소에 dark, light태그를 add한다.
+사용자의 경험을 중요하게 생각합니다
 
-- light와 dark class에 대한 스타일들을 각각 만들어 놓음
+복잡하고 어려움보다 직관적이고 단순함을 중요하게 생각합니다
 
-- light, dark class가 add됨에 따라 그에 맞는 스타일들이 적용됨
+사색과 고민, 기록과 기억을 중요하게 생각합니다
 
-![캡쳐](./public/img/readme/블로그_메인페이지.png)
-![캡쳐](./public/img/readme/블로그_메인페이지_dark.png)
+---
 
-<hr>
+### 0. Page
 
-#### 1. Home
+home([https://megadeve](https://megadeve)) - 김선인의 간략한 소개, 링크
 
-![캡쳐](./public/img/readme/블로그_메인페이지.png)
+deve([https://megadeve/deve](https://megadeve/deve)) - 개발에 관한 것들을 기록하는 공간
 
-- 로고와 블로그 이름, 다크모드
+note([https://megadeve/note](https://megadeve/note)) - 자유롭게 기록하고 기억하는 공간
 
-- 페이지 이동을 위한 navigation배치
+craf([https://megadeve/craf](https://megadeve/craf)) - 직접 만들고 보여주기 위한 공간
 
-- 블로그 소개 밑 김선인에 대한 설명.
+---
 
-- 김선인의 github, notion 링크
+### 1. Dark Mode
 
-<hr>
+블로그 최상단에 위치한 태양, 달 로고로 다크모드 전환
 
-#### 2. Deve
+테마 변경으로 사용자는 자신에게 맞는 환경에 적응할 수 있음
 
-![캡쳐](./public/img/readme/블로그_개발페이지.png)
+---
 
-- 페이지 이동을 위한 navigation배치
+### 2. Header
 
-- 내가 현재까지 개발하며 발견한 유용한 정보들을 보관하는 공간
+로고와 블로그 이름, 테마 아이콘
 
-- md파일을 통한 페이지 렌더링
+다크모드 아이콘으로 간편한 테마변경(dark, light)
 
-<hr>
+---
 
-#### 3. Note
+### 2. Navigation
 
-![캡쳐](./public/img/readme/블로그_노트페이지.png)
+페이지 이동을 위한 navigation배치
 
-- 페이지 이동을 위한 navigation배치
+next js Link로 빠른 페이지이동
 
-- 고민들과 잡다한 정보들을 자유롭게 보관하는 공간
+페이지별 링크로 사용자에게 직관적인 ui를 제공
 
-- md파일을 통한 페이지 렌더링
+---
+
+### 3. markdown
+
+md파일을 통한 간편한 글 생성
+
+md파일로 블로그 글을 간단하게 렌더링
