@@ -19,7 +19,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "svg/*": ["./public/svg/*"]
+      "svg/*": ["./public/svg/*"],
+      "sound/*": ["./public/sound/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

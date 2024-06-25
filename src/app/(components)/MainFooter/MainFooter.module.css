@@ -1,35 +1,35 @@
 @screen pc {
-  .footer {
+  .main_footer {
     @apply w-full mt-[40px];
   }
-  .footer > div {
+  .main_footer > div {
     @apply mt-[10px];
   }
-  .footer > div > a {
+  .main_footer > div > a {
     @apply p-[4px] mr-[6px];
   }
 }
 
 @screen tablet {
-  .footer {
+  .main_footer {
     @apply w-full mt-[40px];
   }
-  .footer > div {
+  .main_footer > div {
     @apply mt-[10px];
   }
-  .footer > div > a {
+  .main_footer > div > a {
     @apply p-[4px]  mr-[6px];
   }
 }
 
 @screen mobile {
-  .footer {
+  .main_footer {
     @apply w-full mt-[40px];
   }
-  .footer > div {
+  .main_footer > div {
     @apply mt-[10px];
   }
-  .footer > div > a {
+  .main_footer > div > a {
     @apply p-[4px]  mr-[6px];
   }
 }
