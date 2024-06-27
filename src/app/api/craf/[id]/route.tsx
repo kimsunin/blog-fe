@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import path from "path";
 import { promises as fs } from "fs";
+import errorMd from "@/db/error.md";
 
 export async function GET(
   req: NextRequest,
@@ -19,6 +20,9 @@ export async function GET(
     const data = await fs.readFile(filePath, "utf-8");
     return NextResponse.json({ data: data }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: "File not found" }, { status: 404 });
+    return NextResponse.json(
+      { data: "<p>File Not Found</p>  <a href=/>cd ~</a>" },
+      { status: 404 }
+    );
   }
 }
