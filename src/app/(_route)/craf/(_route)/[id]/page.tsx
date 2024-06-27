@@ -1,11 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
 
 function Page({ params }: { params: { id: string } }) {
-  const router = useRouter();
-
   const [data, setData] = useState();
   const [visible, setVisible] = useState(false);
 

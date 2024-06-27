@@ -1,11 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
 
 function Page({ params }: { params: { id: string } }) {
-  const router = useRouter();
-
   const [data, setData] = useState();
   const [visible, setVisible] = useState(false);
 
@@ -32,8 +29,6 @@ const getData = async (id: string) => {
     return data;
   } catch (e) {
     console.log(e);
-    alert("데이터가 존재하지 않습니다.");
-    window.location.replace("/deve");
   }
 };
 

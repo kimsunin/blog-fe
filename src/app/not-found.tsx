@@ -1,8 +1,6 @@
 "use client";
 import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
-import errorData from "@/db/error.md";
 import { useEffect, useState } from "react";
-import { json } from "stream/consumers";
 
 export default function NotFound() {
   const [data, setData] = useState<string>();
