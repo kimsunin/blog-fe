@@ -5,9 +5,7 @@
 body {
   @apply scroll-smooth text-black/80 dark:text-white/80;
 }
-main {
-  @apply mt-[40px] mb-[80px];
-}
+
 a {
   @apply px-[4px] duration-300 rounded-md inline-flex items-center;
   transition-property: background-color, transform;

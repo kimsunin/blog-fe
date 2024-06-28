@@ -1,8 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import styles from "./ThemeSwitch.module.css";
-import { LightIc, DarkIco } from "svg/index";
+import { MoonIc, SunIc } from "svg/index";
 import { themeSound } from "sound/index";
 
 function ThemeSwitch() {
@@ -20,8 +19,8 @@ function ThemeSwitch() {
 
   return (
     <button onClick={() => switchTheme()} className={styles.theme_switch}>
-      {theme == "light" && <LightIc />}
-      {theme == "dark" && <DarkIco />}
+      {theme == "light" && <MoonIc />}
+      {theme == "dark" && <SunIc />}
     </button>
   );
 }

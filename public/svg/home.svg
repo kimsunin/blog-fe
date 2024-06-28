@@ -1,0 +1,7 @@
+<svg width="40" height="40" viewBox="0 0 30 30"  xmlns="http://www.w3.org/2000/svg">
+<circle cx="15" cy="15" r="15" fill="currentColor" mask="url(#mask0)"/>
+<mask id="mask0" x="0" y="0" width="30" height="30">
+    <rect width="30" height="30" fill="white"/>
+    <path d="M7.59801 7.45455H10.2614L14.892 18.7614H15.0625L19.6932 7.45455H22.3565V22H20.2685V11.4744H20.1335L15.8438 21.9787H14.1108L9.82102 11.4673H9.68608V22H7.59801V7.45455Z" fill="black"/>
+</mask>
+</svg>

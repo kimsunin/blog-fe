@@ -1,6 +1,6 @@
 @screen pc {
   .nav {
-    @apply mt-[40px];
+    @apply my-[40px];
   }
   .nav > ul > li {
     @apply my-[10px] flex;
@@ -12,7 +12,7 @@
 
 @screen tablet {
   .nav {
-    @apply mt-[40px];
+    @apply my-[40px];
   }
   .nav > ul > li {
     @apply my-[10px] flex;
@@ -24,7 +24,7 @@
 
 @screen mobile {
   .nav {
-    @apply mt-[40px];
+    @apply my-[40px];
   }
   .nav > ul > li {
     @apply my-[10px] flex;

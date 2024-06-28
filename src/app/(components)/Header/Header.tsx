@@ -1,17 +1,14 @@
 "use client";
-import styles from "./Header.module.css";
-import { HomeIc, DarkHomeIc } from "svg/index";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
-import { useTheme } from "next-themes";
+import styles from "./Header.module.css";
+import { HomeIc } from "svg/index";
 
 function Header() {
-  const { theme, setTheme } = useTheme();
-
   return (
     <header className={styles.header}>
       <div>
         <div>
-          {theme == "light" ? <HomeIc /> : <DarkHomeIc />}
+          <HomeIc />
           <span>Mega Dev</span>
         </div>
         <ThemeSwitch />

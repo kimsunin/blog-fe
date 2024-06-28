@@ -1,17 +1,10 @@
 "use client";
 import Link from "next/link";
 import CustomLink from "@/common/components/CustomLink/CustomLink";
-import { useTheme } from "next-themes";
 import styles from "./MainFooter.module.css";
-import {
-  DarkGithubIc,
-  DarkNotionIc,
-  LightGithubIc,
-  LightNotionIc,
-} from "svg/index";
+import { GithubIc, NotionIc } from "svg/index";
 
 function MainFooter() {
-  const { theme } = useTheme();
   return (
     <div className={styles.main_footer}>
       <p>
@@ -20,10 +13,10 @@ function MainFooter() {
       </p>
       <div>
         <Link href="https://github.com/kimsunin">
-          {theme == "light" ? <LightGithubIc /> : <DarkGithubIc />}
+          <GithubIc />
         </Link>
         <Link href="https://www.notion.so/suninkim/kimsunin-947b333fef434eef9c0d5c935dfc30d0?pm=c">
-          {theme == "light" ? <LightNotionIc /> : <DarkNotionIc />}
+          <NotionIc />
         </Link>
       </div>
     </div>

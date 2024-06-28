@@ -1,21 +1,8 @@
-import HomeIc from "./favicon.svg";
-import LightIc from "./light.svg";
-import DarkIco from "./dark.svg";
-import DarkHomeIc from "./darkhome.svg";
+import HomeIc from "./home.svg";
+import MoonIc from "./moon.svg";
+import SunIc from "./sun.svg";
 import LinkIc from "./link.svg";
-import LightGithubIc from "./ligthgithub.svg";
-import DarkGithubIc from "./darkgithub.svg";
-import LightNotionIc from "./lightnotion.svg";
-import DarkNotionIc from "./darknotion.svg";
+import GithubIc from "./github.svg";
+import NotionIc from "./notion.svg";
 
-export {
-  HomeIc,
-  DarkIco,
-  LightIc,
-  DarkHomeIc,
-  LinkIc,
-  LightGithubIc,
-  DarkGithubIc,
-  LightNotionIc,
-  DarkNotionIc,
-};
+export { HomeIc, SunIc, MoonIc, LinkIc, GithubIc, NotionIc };
