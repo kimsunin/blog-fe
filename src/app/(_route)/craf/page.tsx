@@ -15,7 +15,7 @@ function Page() {
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
-      <ContentList type="craf" data={data} />
+      <ContentList type="craf" data={data}/>
     </section>
   );
 }

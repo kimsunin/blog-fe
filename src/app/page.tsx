@@ -13,7 +13,7 @@ export default function Home() {
           </p>
         </article>
       </section>
-      <MainFooter />
+      <MainFooter/>
     </main>
   );
-}
+};

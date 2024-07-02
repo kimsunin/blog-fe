@@ -13,6 +13,7 @@
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.3",
     "@types/mdx": "^2.0.13",
+    "@uiw/react-md-editor": "^4.0.4",
     "axios": "^1.7.2",
     "highlight.js": "^11.9.0",
     "next": "14.2.3",
