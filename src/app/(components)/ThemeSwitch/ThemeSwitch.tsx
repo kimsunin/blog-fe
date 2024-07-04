@@ -3,13 +3,17 @@ import { useTheme } from "next-themes";
 import styles from "./ThemeSwitch.module.css";
 import { MoonIc, SunIc } from "svg/index";
 import { themeSound } from "sound/index";
+import { useSound } from "../SoundSwitch/SoundSwitch";
 
 function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
-  const sound = new Audio(themeSound);
+  const { sound, setSound } = useSound();
+  const soundObj = new Audio(themeSound);
 
   const switchTheme = () => {
-    sound.play();
+    if (sound) {
+      soundObj.play();
+    }
     if (theme == "light") {
       setTheme("dark");
     } else {

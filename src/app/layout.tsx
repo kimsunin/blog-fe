@@ -5,6 +5,7 @@ import "./globals.css";
 import ThemeProvider from "./(components)/ThemeProvider/ThemeProvider";
 import RootContainer from "./(components)/RootContainer/RootContainer";
 import BlurLayer from "./(components)/BlurLayer/BlurLayer";
+import SoundProvider from "./(components)/SoundProvider/SoundProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,8 +34,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider>
-          <BlurLayer />
-          <RootContainer>{children}</RootContainer>
+          <SoundProvider>
+            <BlurLayer />
+            <RootContainer>{children}</RootContainer>
+          </SoundProvider>
         </ThemeProvider>
       </body>
     </html>

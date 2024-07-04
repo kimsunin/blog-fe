@@ -1,4 +1,5 @@
 "use client";
+import SoundSwitch from "../SoundSwitch/SoundSwitch";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import styles from "./Header.module.css";
 import { HomeIc } from "svg/index";
@@ -11,7 +12,10 @@ function Header() {
           <HomeIc />
           <span>Mega Dev</span>
         </div>
-        <ThemeSwitch />
+        <div>
+          <SoundSwitch />
+          <ThemeSwitch />
+        </div>
       </div>
     </header>
   );

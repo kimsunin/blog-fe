@@ -1,0 +1,17 @@
+@screen pc {
+  .sound_switch {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+  }
+}
+
+@screen tablet {
+  .sound_switch {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+  }
+}
+
+@screen mobile {
+  .sound_switch {
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+  }
+}
