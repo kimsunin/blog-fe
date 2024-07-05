@@ -9,6 +9,8 @@ function useHook() {
   function change({ changeItem, setChangeItem, e }: PropsType) {
     setChangeItem({ ...changeItem, [e.target.name]: e.target.value });
   }
+
   return change;
 }
-export default useHook;
+
+export { useHook };

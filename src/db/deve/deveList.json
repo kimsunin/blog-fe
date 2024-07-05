@@ -2,6 +2,7 @@
   {
     "year": "2024",
     "content": [
+      { "id": 6, "title": "[next js] Provider, 음소거구현", "data": "07. 05." },
       { "id": 5, "title": "[next js] 에러페이지(404)", "data": "07. 02." },
       { "id": 4, "title": "[portone] 포트원 결제 api구현", "data": "06. 18." },
       { "id": 3, "title": "[docker] docker로 배포하기", "data": "06. 07." },

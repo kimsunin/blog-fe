@@ -1,21 +1,15 @@
-import useStickyState from "@/hooks/useStickyState";
+import { useSound } from "@/hooks/useSound";
 import styles from "./SoundSwitch.module.css";
+import { themeSound } from "sound/index";
 import { SoundOnIc, SoundOffIc } from "svg/index";
-import { useContext } from "react";
-import { SoundContext } from "../SoundProvider/SoundProvider";
-
-export const useSound = () => {
-  const context = useContext(SoundContext);
-  if (context === undefined) {
-    throw new Error("useSound must be used within a SoundProvider");
-  }
-  return context;
-};
 
 function SoundSwitch() {
   const { sound, setSound } = useSound();
 
+  const soundObj = new Audio(themeSound);
+
   const switchSound = () => {
+    soundObj.play();
     setSound(!sound);
   };
 

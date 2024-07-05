@@ -1,17 +1,9 @@
 "use client";
+import { useEffect, useState, ReactNode } from "react";
+import { SoundContext } from "@/hooks/useSound";
 import useStickyState from "@/hooks/useStickyState";
-import { useEffect, useState, useContext, ReactNode } from "react";
-import { createContext } from "react";
 
 // Define a type for the context value
-interface SoundContextType {
-  sound: boolean | undefined;
-  setSound: (sound: boolean) => void;
-}
-
-export const SoundContext = createContext<SoundContextType | undefined>(
-  undefined
-);
 
 interface SoundProviderProps {
   children: ReactNode;

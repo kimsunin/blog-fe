@@ -1,13 +1,16 @@
 "use client";
-import { Suspense, useCallback, useEffect, useState } from "react";
-import MdEditor from "@/app/(_route)/edit/(components)/MdEditor/MdEditor";
-import useHook from "@/hooks/useHook";
+import { useCallback, useEffect, useState } from "react";
+import MdEditor from "./(components)/MdEditor/MdEditor";
+import { useHook } from "@/hooks/useHook";
 import styles from "./page.module.css";
 
 function Page() {
   const change = useHook();
 
+  const [visible, setVisible] = useState(false);
+
   const [password, setPassword] = useState();
+
   const [editItem, setEditItem] = useState<{
     type: string;
     title: string;
@@ -40,6 +43,7 @@ function Page() {
       localStorage.setItem("content", editItem.content);
     }
     console.log(editItem);
+    setVisible(true);
   }, [editItem]);
 
   const onSubmit = () => {
@@ -51,18 +55,19 @@ function Page() {
   };
 
   return (
-    <section className={styles.edit_section}>
+    <section className={`${styles.edit_section} ${visible ? "isvisible" : "isinvisible"}`}>
       <div onChange={itemChange}>
         <select name="type" defaultValue={editItem.type}>
           <option value="note">note</option>
           <option value="craf">craf</option>
           <option value="deve">deve</option>
         </select>
-        <input defaultValue={editItem.title} name="title" placeholder="제목" />
+        <input defaultValue={editItem.title} name="title" placeholder="제목"/>
       </div>
-      <MdEditor value={editItem.content} onChange={contentChange} />
+      <MdEditor value={editItem.content} onChange={contentChange}/>
       <div>
         <input
+          type="password"
           name="password"
           placeholder="비밀번호"
           onChange={passwordChange}
