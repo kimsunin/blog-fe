@@ -1,20 +1,21 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   darkMode: "class",
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+
   theme: {
     extend: {
-      transitionProperty: {
-        w: "width",
-        h: "height",
-        bg: "background-color",
-      },
+      // transitionProperty: {
+      //   w: "width",
+      //   h: "height",
+      //   bg: "background-color",
+      // },
       // backgroundImage: {},
       screens: {
-        mobile: { max: "767px" },
-        tablet: { min: "768px", max: "1023px" },
-        pc: { min: "1024px" },
+        mobile: {max: "767px"},
+        tablet: {min: "768px", max: "1023px"},
+        pc: {min: "1024px"},
       },
       colors: {},
     },
