@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "MD | note",
+  description: "자유롭게 기록하고 기억하는 공간",
 };
 
 export default function NoteLayout({
