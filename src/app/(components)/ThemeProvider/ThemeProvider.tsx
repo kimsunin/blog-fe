@@ -7,7 +7,6 @@ import { type ThemeProviderProps } from 'next-themes/dist/types';
 function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   const [isMount, setMount] = useState(false)
 
-
   useEffect(() => {
     setMount(true)
   }, [])

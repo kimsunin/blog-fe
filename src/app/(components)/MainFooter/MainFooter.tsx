@@ -9,7 +9,7 @@ function MainFooter() {
     <div className={styles.main_footer}>
       <p>
         <CustomLink href="https://plus.cnu.ac.kr/html/kr/" label="충남대학교" />
-        에 재학중인 평범한 학생입니다.
+        에 재학중인 컴퓨터를 좋아하는 학생입니다.
       </p>
       <div>
         <Link href="https://github.com/kimsunin">
