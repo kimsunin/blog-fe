@@ -39,7 +39,7 @@ next-env.d.ts
 .idea
 
 #gitmessage
-.gitmessage
+.gitmessage.txt
 
 #env
 .env

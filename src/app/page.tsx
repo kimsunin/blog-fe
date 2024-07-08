@@ -23,7 +23,7 @@ export default function Home() {
             하고<b> 기억</b>하고자 합니다.
           </p>
         </article>
-        <MainFooter />
+        <MainFooter/>
       </section>
     </main>
   );
