@@ -50,3 +50,19 @@ jobs:
 # build용 캐시를 사용, 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
         cache-from: type=gha
         cache-to: type=gha,mode=max
+
+#docker pull and docker run
+    - name: Pull and Run
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: kimsunin
+        key: ${{ secrets.SSH_PASSWORD }}
+        port: 11111
+        script: |
+            cd ~/docker-compose/blog/blog-fe
+            touch test.md
+            
+          
+
+
