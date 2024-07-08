@@ -62,6 +62,8 @@ jobs:
         script: |
             cd ~/docker-compose/blog/blog-fe
             touch test.md
+            exit
+          
             
           
 
