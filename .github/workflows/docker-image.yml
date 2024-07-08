@@ -61,7 +61,9 @@ jobs:
         port: 11111
         script: |
             cd ~/docker-compose/blog/blog-fe
-            touch test.md
+            docker-compose down
+            docker rmi $(docker images | grep "kimsunin/blog-fe" | awk '{print $3}')
+            docker-compose up
             exit
           
             
