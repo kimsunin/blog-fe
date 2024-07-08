@@ -14,7 +14,7 @@ export default function Home() {
     <main id="main">
       <section className={visible ? "isvisible" : "isinvisible"}>
         <article>
-          <p>김선인의 개발공간(git action을 통한 배포)</p>
+          <p>김선인의 개발공간</p>
           <p>
             단순히 만드는 것에 그치지 않으며
             <Link href="/edit">
