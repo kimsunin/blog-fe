@@ -47,6 +47,6 @@ jobs:
         platforms: linux/arm64/v8
         push: true
         tags: kimsunin/blog-fe:latest
-        cache-from: type=gha # 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
+# build용 캐시를 사용, 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
+        cache-from: type=gha
         cache-to: type=gha,mode=max
-#        labels: ${{ steps.docker_meta.outputs.labels }}
