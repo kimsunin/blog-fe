@@ -20,12 +20,12 @@ jobs:
       name: Checkout
       uses: actions/checkout@v4
 
-    - name: Docker meta
-      id: docker_meta
-      uses: crazy-max/ghaction-docker-meta@v1
-      with:
-        images: kimsunin/blog-fe
-        tag-semver: latest
+#    - name: Docker meta
+#      id: docker_meta
+#      uses: crazy-max/ghaction-docker-meta@v1
+#      with:
+#        images: kimsunin/blog-fe
+##        tag-semver: latest
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
@@ -46,5 +46,5 @@ jobs:
         file: ./Dockerfile
         platforms: linux/arm64/v8
         push: true
-        tags: ${{ steps.docker_meta.outputs.tags }}
-        labels: ${{ steps.docker_meta.outputs.labels }}
+        tags: kimsunin/blog-fe
+#        labels: ${{ steps.docker_meta.outputs.labels }}
