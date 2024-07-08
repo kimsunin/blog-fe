@@ -6,11 +6,11 @@ const config: Config = {
 
   theme: {
     extend: {
-      // transitionProperty: {
-      //   w: "width",
-      //   h: "height",
-      //   bg: "background-color",
-      // },
+      transitionProperty: {
+        w: "width",
+        h: "height",
+        bg: "background-color",
+      },
       // backgroundImage: {},
       screens: {
         mobile: {max: "767px"},
