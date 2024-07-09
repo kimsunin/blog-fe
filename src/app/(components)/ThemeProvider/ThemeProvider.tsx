@@ -14,9 +14,9 @@ function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   if (!isMount) {
     return null
   }
-    
+
   return (
-    <NextThemesProvider attribute='class' defaultTheme="light" {...props}>
+    <NextThemesProvider attribute='class' enableSystem={true} {...props}>
       {children}
     </NextThemesProvider>
   );
