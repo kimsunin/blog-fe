@@ -43,7 +43,7 @@ jobs:
         file: ./Dockerfile
         platforms: linux/arm64/v8
         push: true
-        tags: kimsunin/blog-fe:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/blog-fe:latest
 #build용 캐시를 사용, 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
         cache-from: type=gha
         cache-to: type=gha,mode=max
@@ -55,11 +55,11 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
-        port: 11111
+        port: ${{ SSH_PORT }}
         script: |
             cd ~/docker-compose/blog/blog-fe
             docker-compose down
-            docker rmi $(docker images | grep "kimsunin/blog-fe" | awk '{print $3}')
+            docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/blog-fe" | awk '{print $3}')
             docker-compose up -d
             exit
           
