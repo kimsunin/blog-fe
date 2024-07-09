@@ -16,7 +16,7 @@ function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   }
     
   return (
-    <NextThemesProvider attribute='class' defaultTheme='light' {...props}>
+    <NextThemesProvider attribute='class' defaultTheme="light" {...props}>
       {children}
     </NextThemesProvider>
   );
