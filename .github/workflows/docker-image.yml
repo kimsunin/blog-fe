@@ -43,7 +43,7 @@ jobs:
         file: ./Dockerfile
         platforms: linux/arm64/v8
         push: true
-        tags: `${{ secrets.DOCKER_USERNAME }}/blog-fe:${{ github.sha }}`
+        tags: ${{ secrets.DOCKER_USERNAME }}/blog-fe:${{ github.sha }}
 #build용 캐시를 사용, 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
         cache-from: type=gha
         cache-to: type=gha,mode=max
