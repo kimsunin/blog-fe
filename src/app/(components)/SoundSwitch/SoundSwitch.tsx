@@ -1,15 +1,17 @@
 import { useSound } from "@/hooks/useSound";
 import styles from "./SoundSwitch.module.css";
-import { themeSound } from "sound/index";
+import { soundSound } from "sound/index";
 import { SoundOnIc, SoundOffIc } from "svg/index";
 
 function SoundSwitch() {
   const { sound, setSound } = useSound();
 
-  const soundObj = new Audio(themeSound);
+  const soundObj = new Audio(soundSound);
 
   const switchSound = () => {
-    soundObj.play();
+    if(!sound) {
+      soundObj.play();
+    }
     setSound(!sound);
   };
 

@@ -1,9 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSound } from "@/hooks/useSound";
 import styles from "./CustomLink.module.css";
-import { buttonSound } from "sound/index";
 import { LinkIc } from "svg/index";
 
 type PropsType = {
@@ -13,8 +11,6 @@ type PropsType = {
 
 function CustomLink({ label, href }: PropsType) {
   const pathName = usePathname();
-  const soundObj = new Audio(buttonSound);
-  const { sound } = useSound();
 
   return (
     <Link
@@ -24,14 +20,9 @@ function CustomLink({ label, href }: PropsType) {
           : ""
       }`}
       href={href}
-      onClick={() => {
-        if (sound) {
-          soundObj.play();
-        }
-      }}
     >
       <label>{label}</label>
-      <LinkIc />
+      <LinkIc/>
     </Link>
   );
 }

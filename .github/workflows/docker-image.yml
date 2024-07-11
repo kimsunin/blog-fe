@@ -1,7 +1,7 @@
 name: Docker Image CI
 
 on:
-#dev로 푸시 및 풀 리퀘스트시에 event 발생시 동작
+#dev로 푸시 및 풀 리퀘스트 event 발생시 동작
   push:
     branches: [ "dev" ]
   pull_request:
