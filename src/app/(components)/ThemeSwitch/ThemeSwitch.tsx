@@ -10,6 +10,7 @@ function ThemeSwitch() {
   const {sound, setSound} = useSound();
   const soundObj = new Audio(themeSound);
 
+
   const switchTheme = () => {
     if (sound) {
       soundObj.play();
