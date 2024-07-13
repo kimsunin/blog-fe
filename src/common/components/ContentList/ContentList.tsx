@@ -12,7 +12,7 @@ function ContentList({ type, data }: PropsType) {
       {content.map((item, index) => (
         <li key={index}>
           <Link href={`/${type}/${item.id}`}>{item.title}</Link>
-          <span>{item.data}</span>
+          <span>{item.date}</span>
         </li>
       ))}
     </ul>

@@ -16,7 +16,7 @@ function Page({ params }: { params: { id: string } }) {
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
       <article>
-        <MarkDownView post={data} />
+        <MarkDownView post={data}/>
       </article>
     </section>
   );
@@ -26,6 +26,7 @@ const getData = async (id: string) => {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `note/${id}`);
     const data = res.json();
+
     return data;
   } catch (e) {
     console.log(e);
