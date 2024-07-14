@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import ContentList from "@/common/components/ContentList/ContentList";
+import ContentList from "@/components/ContentList/ContentList";
 
 function Page() {
   const [data, setData] = useState();

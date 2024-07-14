@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
+import MarkDownView from "@/components/MarkDownView/MarkDownView";
 
 function Page({ params }: { params: { id: string } }) {
   const [data, setData] = useState();
@@ -26,7 +26,6 @@ const getData = async (id: string) => {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `note/${id}`);
     const data = res.json();
-
     return data;
   } catch (e) {
     console.log(e);

@@ -1,7 +1,7 @@
 "use client";
 import {useRouter} from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import MdEditor from "./(components)/MdEditor/MdEditor";
+import MdEditor from "@/components/MdEditor/MdEditor";
 import { useHook } from "@/hooks/useHook";
 import styles from "./page.module.css";
 

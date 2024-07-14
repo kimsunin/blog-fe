@@ -1,4 +1,4 @@
-import Canvas from "../../(components)/Canvas/Canvas";
+import Canvas from "@/components/Canvas/Canvas";
 
 function Page() {
   return (

@@ -1,6 +1,6 @@
-import CustomLink from "@/common/components/CustomLink/CustomLink";
+import CustomLink from "@/components/CustomLink/CustomLink";
 import styles from "./Nav.module.css";
-import navHref from "@/model/navHref";
+import navHref from "@/models/navHref";
 
 function Nav() {
   const navList = navHref.map((item, index) => (

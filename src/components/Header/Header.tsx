@@ -1,6 +1,6 @@
 "use client";
-import SoundSwitch from "../SoundSwitch/SoundSwitch";
-import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+import SoundSwitch from "@/components/SoundSwitch/SoundSwitch";
+import ThemeSwitch from "@/components/ThemeSwitch/ThemeSwitch";
 import styles from "./Header.module.css";
 import { HomeIc } from "svg/index";
 

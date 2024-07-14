@@ -1,4 +1,4 @@
-import { InputType, SelectType } from "@/common/(types)/EventType";
+import { InputType, SelectType } from "@/types/EventType";
 
 function useHook() {
   type PropsType = {

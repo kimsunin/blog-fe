@@ -1,0 +1,6 @@
+.edit_section > div:nth-child(2n-1) {
+  @apply flex justify-between;
+}
+.edit_section select {
+  @apply outline-none cursor-pointer;
+}

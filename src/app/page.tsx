@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import MainFooter from "./(components)/MainFooter/MainFooter";
+import MainFooter from "@/components/MainFooter/MainFooter";
 
 export default function Home() {
   const [visible, setVisible] = useState(false);

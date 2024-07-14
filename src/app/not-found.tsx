@@ -1,5 +1,5 @@
 "use client";
-import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
+import MarkDownView from "@/components/MarkDownView/MarkDownView";
 import { useEffect, useState } from "react";
 
 export default function NotFound() {

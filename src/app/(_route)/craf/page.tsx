@@ -1,5 +1,5 @@
 "use client";
-import ContentList from "@/common/components/ContentList/ContentList";
+import ContentList from "@/components/ContentList/ContentList";
 import { useEffect, useState } from "react";
 
 function Page() {

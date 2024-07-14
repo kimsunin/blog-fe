@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import MarkDownView from "@/common/components/MarkDownView/MarkDownView";
+import MarkDownView from "@/components/MarkDownView/MarkDownView";
 
 function Page({ params }: { params: { id: string } }) {
   const [data, setData] = useState();

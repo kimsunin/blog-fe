@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import CustomLink from "@/common/components/CustomLink/CustomLink";
+import CustomLink from "@/components/CustomLink/CustomLink";
 import styles from "./MainFooter.module.css";
 import { GithubIc, NotionIc } from "svg/index";
 
