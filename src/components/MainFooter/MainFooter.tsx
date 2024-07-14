@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import CustomLink from "@/components/CustomLink/CustomLink";
 import styles from "./MainFooter.module.css";
 import { GithubIc, NotionIc } from "svg/index";
 
@@ -8,7 +7,7 @@ function MainFooter() {
   return (
     <div className={styles.main_footer}>
       <p>
-        <CustomLink href="https://plus.cnu.ac.kr/html/kr/" label="충남대학교"/>
+        <Link href="https://plus.cnu.ac.kr/html/kr/" target="_blank"><strong>충남대학교</strong></Link>
         에 재학중인 컴퓨터를 좋아하는 학생입니다.
       </p>
       <div>

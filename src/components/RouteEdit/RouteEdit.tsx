@@ -1,5 +1,5 @@
 "use client"
-import {useRouter} from "next/navigation";
+import Link from "next/link";
 import styles from "./RouteEdit.module.css"
 
 type PropsType = {
@@ -7,14 +7,10 @@ type PropsType = {
 }
 
 function RouteEdit({href}:PropsType){
-  const router = useRouter()
 
-  const route = () => {
-    router.push(href)
-  };
 
   return<div className={styles.route_edit}>
-    <button onClick={route}>cd edit</button>
+    <Link href={href}>cd edit</Link>
   </div>
 }
 

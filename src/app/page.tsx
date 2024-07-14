@@ -18,9 +18,9 @@ export default function Home() {
           <p>
             단순히 만드는 것에 그치지 않으며
             <Link href="/edit">
-              <b>기록</b>
+              <strong>기록</strong>
             </Link>
-            하고<b> 기억</b>하고자 합니다.
+            하고<strong> 기억</strong>하고자 합니다.
           </p>
         </article>
         <MainFooter/>
