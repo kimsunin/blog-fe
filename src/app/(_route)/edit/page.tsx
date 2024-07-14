@@ -1,10 +1,12 @@
 "use client";
+import {useRouter} from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import MdEditor from "./(components)/MdEditor/MdEditor";
 import { useHook } from "@/hooks/useHook";
 import styles from "./page.module.css";
 
 function Page() {
+  const router = useRouter();
   const change = useHook();
 
   const [visible, setVisible] = useState(false);
@@ -29,7 +31,7 @@ function Page() {
   };
   const contentChange = useCallback(
     (value: string | undefined) => {
-      setEditItem({ ...editItem, content: value });
+      setEditItem({...editItem, content: value});
     },
     [editItem]
   );
@@ -42,13 +44,24 @@ function Page() {
     if (editItem.content || editItem.content == "") {
       localStorage.setItem("content", editItem.content);
     }
-    console.log(editItem);
     setVisible(true);
   }, [editItem]);
 
-  const onSubmit = () => {
+  const onSubmit = async() => {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
-      alert("작성완료");
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {method: "post", body: JSON.stringify(editItem)});
+      const data = await res.json();
+
+      if(res.status == 200) {
+        alert("작성완료");
+        localStorage.removeItem("type")
+        localStorage.removeItem("title")
+        localStorage.removeItem("content")
+        console.log(data)
+        router.push(`/${editItem.type}/${data.data[0].id}`);
+      } else if(res.status == 404) {
+        alert(data.error);
+      }
     } else {
       alert("비밀번호가 다릅니다");
     }
