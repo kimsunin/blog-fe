@@ -15,6 +15,7 @@ function Page() {
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
+
       <ContentList type="deve" data={data} />
     </section>
   );

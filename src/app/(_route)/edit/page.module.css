@@ -1,3 +1,6 @@
+.edit_section > hr {
+  @apply my-[20px]
+}
 .edit_section > div:nth-child(2n-1) {
   @apply flex justify-between;
 }

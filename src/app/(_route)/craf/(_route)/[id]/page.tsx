@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import MarkDownView from "@/components/MarkDownView/MarkDownView";
+import RouteEdit from "@/components/RouteEdit/RouteEdit";
 
 function Page({ params }: { params: { id: string } }) {
   const [data, setData] = useState();
@@ -16,8 +17,9 @@ function Page({ params }: { params: { id: string } }) {
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
       <article>
-        <MarkDownView post={data} />
+        <MarkDownView post={data}/>
       </article>
+      <RouteEdit href={`/edit/craf/${params.id}`}/>
     </section>
   );
 }

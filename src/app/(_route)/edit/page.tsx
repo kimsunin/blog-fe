@@ -51,24 +51,24 @@ function Page() {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
       const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {method: "post", body: JSON.stringify(editItem)});
       const data = await res.json();
-
       if(res.status == 200) {
         alert("작성완료");
         localStorage.removeItem("type")
         localStorage.removeItem("title")
         localStorage.removeItem("content")
-        console.log(data)
         router.push(`/${editItem.type}/${data.data[0].id}`);
       } else if(res.status == 404) {
         alert(data.error);
       }
     } else {
-      alert("비밀번호가 다릅니다");
+      alert("비밀번호오류");
     }
   };
 
   return (
     <section className={`${styles.edit_section} ${visible ? "isvisible" : "isinvisible"}`}>
+      <h1>글작성</h1>
+      <hr/>
       <div onChange={itemChange}>
         <select name="type" defaultValue={editItem.type}>
           <option value="note">note</option>

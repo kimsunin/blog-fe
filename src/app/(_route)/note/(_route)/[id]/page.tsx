@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import MarkDownView from "@/components/MarkDownView/MarkDownView";
+import RouteEdit from "@/components/RouteEdit/RouteEdit";
 
 function Page({ params }: { params: { id: string } }) {
   const [data, setData] = useState();
@@ -18,6 +19,7 @@ function Page({ params }: { params: { id: string } }) {
       <article>
         <MarkDownView post={data}/>
       </article>
+      <RouteEdit href={`/edit/note/${params.id}`}/>
     </section>
   );
 }
