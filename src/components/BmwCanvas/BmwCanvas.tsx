@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
-function Canvas() {
+function BmwCanvas() {
   const { theme, setTheme } = useTheme();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [start, setStart] = useState(false);
@@ -127,4 +127,4 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+export default BmwCanvas;

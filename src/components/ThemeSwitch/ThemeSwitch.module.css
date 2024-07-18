@@ -1,17 +1,17 @@
 @screen pc {
   .theme_switch {
-    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer;
   }
 }
 
 @screen tablet {
   .theme_switch {
-    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer;
   }
 }
 
 @screen mobile {
   .theme_switch {
-    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer rounded-md;
+    @apply w-[40px] h-[40px] flex items-center justify-center cursor-pointer;
   }
 }

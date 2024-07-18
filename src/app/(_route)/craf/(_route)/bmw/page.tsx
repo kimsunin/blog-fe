@@ -1,9 +1,18 @@
-import Canvas from "@/components/Canvas/Canvas";
+"use client"
+import {useEffect, useState} from "react";
+import BmwCanvas from "@/components/BmwCanvas/BmwCanvas";
+
 
 function Page() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    setVisible(true)
+  }, []);
+
   return (
-    <section className="isvisible">
-      <Canvas />
+    <section className={visible? "isvisible" : "isinvisible"}>
+      <BmwCanvas />
     </section>
   );
 }
