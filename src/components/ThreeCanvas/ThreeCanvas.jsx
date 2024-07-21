@@ -3,8 +3,7 @@ import ThreeElement from "./ThreeElement";
 
 
 function ThreeCanvas() {
-    return <Canvas style={{width: "100%", height: "400px"}}
-        /*camera={{fov:75,near:1, far:20, position:[7,7,7]}}*/
+    return <Canvas style={{width: "100%", height: "400px"}} camera={{near: 3.5, far: 6}}
     >;
         <ThreeElement/>
     </Canvas>;

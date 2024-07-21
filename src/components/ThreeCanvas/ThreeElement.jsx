@@ -2,34 +2,72 @@
 import {useEffect, useRef} from "react";
 import {OrbitControls} from "@react-three/drei";
 import {useControls} from "leva";
+import * as THREE from "three";
+
 
 function ThreeElement() {
-    const meshRef = useRef();
-    const wireMeshRef = useRef();
 
-    const {radius, widthSegments, heightSegments} = useControls({
-        radius: {value: 1, min: 0.1, max: 5, step: 0.01},
-        widthSegments: {value: 32, min: 3, max: 256, step: 1},
-        heightSegments: {value: 32, min: 3, max: 256, step: 1}
-    });
-
-
-    useEffect(() => {
-        wireMeshRef.current.geometry = meshRef.current.geometry;
-    }, [radius, widthSegments, heightSegments]);
 
     return <>
         <OrbitControls/>
-        <ambientLight intensity={0.1}/>
-        <directionalLight position={[2, 1, 3]} intensity={0.5}/>
-        <mesh ref={meshRef}>
-            <sphereGeometry args={[radius, widthSegments, heightSegments]}/>
+        <axesHelper scale={10}></axesHelper>
+        <ambientLight intensity={0.2}/>
+        <directionalLight position={[0, 1, 0]}/>
+        <directionalLight position={[1, 2, 8]} intensity={0.7}/>
+        {/*<TorusGeometry position={[-3, 0, 0]}/>*/}
+        <PlaneGeometry position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, 0]}/>
+        <BoxGeometry position={[0, 0, 0]}/>
+        {/*<SphereGeometry/>*/}
+
+    </>;
+}
+
+function PlaneGeometry(props) {
+
+    const geo = new THREE.PlaneGeometry();
+    geo.args = [10, 10]
+
+    return <>
+        <mesh {...props} geometry={geo}>
             <meshStandardMaterial/>
-        </mesh>
-        <mesh ref={wireMeshRef}>
-            <meshStandardMaterial emissive="white" wireframe={true}/>
         </mesh>
     </>;
 }
+
+
+function BoxGeometry(props) {
+    const geo = new THREE.BoxGeometry();;
+
+
+    return <>
+        <mesh {...props} geometry={geo}>
+            <meshStandardMaterial/>
+        </mesh>
+    </>;
+}
+
+function SphereGeometry(props) {
+
+    const geo = new THREE.SphereGeometry();
+    return <>
+        <mesh {...props} geometry={geo}>
+            <meshStandardMaterial/>
+        </mesh>
+    </>;
+}
+
+
+
+
+function TorusGeometry(props) {
+
+    const geo = new THREE.TorusGeometry();
+    return <>
+        <mesh {...props} geometry={geo}>
+            <meshStandardMaterial/>
+        </mesh>
+    </>;
+}
+
 
 export default ThreeElement
