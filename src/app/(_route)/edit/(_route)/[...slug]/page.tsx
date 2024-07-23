@@ -4,7 +4,6 @@ import {useRouter} from "next/navigation";
 import MdEditor from "@/components/MdEditor/MdEditor";
 import {useHook} from "@/hooks/useHook";
 import styles from "./page.module.css";
-import al from "refractor/lang/al";
 
 
 function Page({params}: { params: { slug: string[] } }) {
@@ -64,8 +63,13 @@ function Page({params}: { params: { slug: string[] } }) {
 
   useEffect(() => {
     const res = getData(params.slug[0], params.slug[1]).then((res)=>{
-      setVisible(true)
-      setEditItem({title:res.data.title, content:res.data.content});
+      if(res.status == 200) {
+        setVisible(true)
+        setEditItem({title: res.data.title, content: res.data.content});
+      } else {
+        alert("type, id 오류")
+        router.back();
+      }
     });
   }, []);
 

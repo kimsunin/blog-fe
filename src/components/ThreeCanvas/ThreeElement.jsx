@@ -18,7 +18,6 @@ function ThreeElement() {
         <PlaneGeometry position={[0, -0.5, 0]} rotation={[-Math.PI / 2, 0, 0]}/>
         <BoxGeometry position={[0, 0, 0]}/>
         {/*<SphereGeometry/>*/}
-
     </>;
 }
 

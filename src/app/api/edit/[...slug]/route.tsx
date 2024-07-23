@@ -36,7 +36,6 @@ export async function DELETE(req: NextRequest, {params}: { params: { slug: strin
 }
 
 export async function POST(req: NextRequest, {params}: { params: { slug: string[] } }) {
-
   try{
     const request = await req.json();
     const { data, error } = await supabase
