@@ -6,7 +6,8 @@ export async function GET(request: NextRequest) {
   try {
     let {data, error} = await supabase
       .from('craf')
-      .select('id,title,date');
+      .select('id,title,date')
+      .order("date", {ascending: false});
 
 
     let groupedNotes: any = {};
