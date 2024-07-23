@@ -63,13 +63,8 @@ function Page({params}: { params: { slug: string[] } }) {
 
   useEffect(() => {
     const res = getData(params.slug[0], params.slug[1]).then((res)=>{
-      if(res.status == 200) {
-        setVisible(true)
-        setEditItem({title: res.data.title, content: res.data.content});
-      } else {
-        alert("type, id 오류")
-        router.back();
-      }
+      setVisible(true);
+      setEditItem({title: res.data.title, content: res.data.content});
     });
   }, []);
 
