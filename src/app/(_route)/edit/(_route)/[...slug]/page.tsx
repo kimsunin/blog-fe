@@ -63,8 +63,13 @@ function Page({params}: { params: { slug: string[] } }) {
 
   useEffect(() => {
     const res = getData(params.slug[0], params.slug[1]).then((res)=>{
-      setVisible(true);
-      setEditItem({title: res.data.title, content: res.data.content});
+      if(res?.status == 200 ) {
+        setVisible(true);
+        setEditItem({title: res?.data.data.title, content: res?.data.data.content});
+      }else {
+        alert(res?.data.error)
+        router.back()
+      }
     });
   }, []);
 
@@ -92,11 +97,15 @@ function Page({params}: { params: { slug: string[] } }) {
   </section>;
 }
 
-const getData = async (type:string, id:string) => {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`);
-  const data = await res.json();
-  return data;
-}
+const getData = async (type: string, id: string) => {
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`);
+    const data = await res.json();
+    return {data: data, status: res.status};
+  }catch (e){
+    console.log(e)
+  }
+};
 
 
 
