@@ -1,4 +1,4 @@
-# Mega Dev
+# KIMSI
 
 [https://megadev.me](https://megadev.me)
 

@@ -10,7 +10,7 @@ function Header() {
       <div>
         <div>
           <HomeIc />
-          <span>Mega Dev</span>
+          <span>KIMSI</span>
         </div>
         <div>
           <SoundSwitch />

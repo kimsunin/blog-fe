@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mega Dev",
+  title: "KIMSI",
   verification: {
     other: {
       "naver-site-verification": "38021cb91c682e676858de5bf424d521bf8514cf",
