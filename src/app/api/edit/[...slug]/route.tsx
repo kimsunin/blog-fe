@@ -1,5 +1,6 @@
 import {NextRequest, NextResponse} from "next/server";
 import {supabase} from "@/utils/supabase";
+import {getToday} from "@/utils/getToday";
 
 
 export async function GET(req: NextRequest, {params}: { params: { slug: string[] } }) {
@@ -40,7 +41,7 @@ export async function POST(req: NextRequest, {params}: { params: { slug: string[
     const request = await req.json();
     const { data, error } = await supabase
       .from(params.slug[0])
-      .update({ title: request.title, content: request.content })
+      .update({ title: request.title, content: request.content, date: getToday() })
       .eq('id', params.slug[1])
       .select()
     if(data) {

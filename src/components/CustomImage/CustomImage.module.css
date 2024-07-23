@@ -1,0 +1,8 @@
+.custom_img > img{
+  @apply w-full h-full object-cover
+}
+
+.error_img {
+  @apply flex justify-center items-center
+}
+

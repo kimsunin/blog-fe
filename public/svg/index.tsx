@@ -6,6 +6,7 @@ import GithubIc from "./github.svg";
 import NotionIc from "./notion.svg";
 import SoundOnIc from "./soundon.svg";
 import SoundOffIc from "./soundoff.svg";
+import ErrorImgIc from "./errorimg.svg"
 
 export {
   HomeIc,
@@ -16,4 +17,5 @@ export {
   NotionIc,
   SoundOnIc,
   SoundOffIc,
+  ErrorImgIc
 };

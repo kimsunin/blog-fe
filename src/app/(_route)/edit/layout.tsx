@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SI | edit",
+  title: "KIMSI | edit",
   description: "글을 작성하고 수정하는 공간",
 };
 

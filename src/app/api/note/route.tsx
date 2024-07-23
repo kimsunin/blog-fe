@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
       groupedNotes[year].push({
         id: note.id,
         title: note.title,
-        date: note.date.slice(5),
+        date: note.date,
       });
     });
 

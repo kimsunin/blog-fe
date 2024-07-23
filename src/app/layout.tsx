@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
-import RootContainer from "@/components/RootContainer/RootContainer";
-import BlurLayer from "@/components/BlurLayer/BlurLayer";
-import SoundProvider from "@/components/SoundProvider/SoundProvider";
+import ThemeProvider from "@/layouts/ThemeProvider/ThemeProvider";
+import RootContainer from "@/layouts/RootContainer/RootContainer";
+import BlurLayer from "@/layouts/BlurLayer/BlurLayer";
+import SoundProvider from "@/layouts/SoundProvider/SoundProvider";
 
 const inter = Inter({
   subsets: ["latin"],

@@ -62,16 +62,16 @@ function Page({params}: { params: { slug: string[] } }) {
   };
 
   useEffect(() => {
-    const res = getData(params.slug[0], params.slug[1]).then((res)=>{
-      if(res?.status == 200 ) {
+    const res = getData(params.slug[0], params.slug[1]).then((res) => {
+      if (res?.status == 200) {
         setVisible(true);
         setEditItem({title: res?.data.data.title, content: res?.data.data.content});
-      }else {
+      } else {
         alert(res?.data.error)
         router.back()
       }
     });
-  }, []);
+  }, [params.slug, router]);
 
 
   return <section className={`${styles.edit_section} ${visible ? "isvisible" : "isinvisible"}`}>

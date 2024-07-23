@@ -1,6 +1,6 @@
-import Header from "@/components/Header/Header";
+import Header from "@/layouts/Header/Header";
 import styles from "./RootContainer.module.css";
-import Nav from "@/components/Nav/Nav";
+import Nav from "@/layouts/Nav/Nav";
 
 function RootContainer({
   children,

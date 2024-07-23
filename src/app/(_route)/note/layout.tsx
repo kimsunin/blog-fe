@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "KIM | note",
+  title: "KIMSI | note",
   description: "자유롭게 기록하고 기억하는 공간",
 };
 

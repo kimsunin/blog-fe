@@ -1,35 +1,95 @@
 @screen pc {
+  /*list*/
   .content_list > div {
     @apply mt-[20px];
   }
   .content_list > div > hr {
     @apply my-[10px];
   }
-  .content_list > div > ul > li {
-    @apply mt-[10px] flex justify-between;
+  .content_list > div > ul {
+    @apply grid grid-cols-2 gap-3
+  }
+
+  /*item*/
+  .content_item{
+    @apply w-full h-[300px]
+  }
+  .content_item > a {
+    @apply w-full h-full px-[0] block
+  }
+  /*이미지영역*/
+  .content_item > a > div:nth-child(1) {
+    @apply w-full h-[200px] rounded-t-md
+  }
+  /*title, date*/
+  .content_item > a > div:nth-child(2) {
+    @apply w-full h-[100px] p-[6px] relative
+  }
+  .content_item > a > div:nth-child(2) > span {
+    @apply absolute bottom-[6px] text-[14px]
   }
 }
 
 @screen tablet {
+  /*list*/
   .content_list > div {
     @apply mt-[20px];
   }
   .content_list > div > hr {
     @apply my-[10px];
   }
-  .content_list > div > ul > li {
-    @apply mt-[10px] flex justify-between;
+  .content_list > div > ul {
+    @apply grid grid-cols-2 gap-3
+  }
+
+  /*item*/
+  .content_item{
+    @apply w-full h-[300px]
+  }
+  .content_item > a {
+    @apply w-full h-full px-0 block
+  }
+  /*이미지영역*/
+  .content_item > a > div:nth-child(1) {
+    @apply w-full h-[200px] rounded-t-md
+  }
+  /*title, date*/
+  .content_item > a > div:nth-child(2) {
+    @apply w-full h-[100px] p-[6px] relative
+  }
+  .content_item > a > div:nth-child(2) > span {
+    @apply absolute bottom-[6px] text-[14px]
   }
 }
 
 @screen mobile {
+  /*list*/
   .content_list > div {
     @apply mt-[20px];
   }
   .content_list > div > hr {
     @apply my-[10px];
   }
-  .content_list > div > ul > li {
-    @apply mt-[10px] flex justify-between;
+  .content_list > div > ul {
+    @apply grid grid-cols-2 gap-3
+  }
+
+  /*item*/
+  .content_item{
+    @apply w-full h-[300px]
+  }
+  .content_item > a {
+    @apply w-full h-full px-0 block
+  }
+  /*이미지영역*/
+  .content_item > a > div:nth-child(1) {
+    @apply w-full h-[200px] rounded-t-md
+  }
+  /*title, date*/
+  .content_item > a > div:nth-child(2) {
+    @apply w-full h-[100px] p-[6px] relative
+  }
+  .content_item > a > div:nth-child(2) > span {
+    @apply absolute bottom-[6px] text-[14px]
   }
 }
