@@ -21,6 +21,9 @@
   .content_item > a > div:nth-child(1) {
     @apply w-full h-[200px] rounded-t-md
   }
+  .content_item > a > div:nth-child(1) > img{
+    @apply rounded-t-md
+  }
   /*title, date*/
   .content_item > a > div:nth-child(2) {
     @apply w-full h-[100px] p-[6px] relative
@@ -53,6 +56,9 @@
   .content_item > a > div:nth-child(1) {
     @apply w-full h-[200px] rounded-t-md
   }
+  .content_item > a > div:nth-child(1) > img{
+    @apply rounded-t-md
+  }
   /*title, date*/
   .content_item > a > div:nth-child(2) {
     @apply w-full h-[100px] p-[6px] relative
@@ -84,6 +90,9 @@
   /*이미지영역*/
   .content_item > a > div:nth-child(1) {
     @apply w-full h-[200px] rounded-t-md
+  }
+  .content_item > a > div:nth-child(1) > img{
+    @apply rounded-t-md
   }
   /*title, date*/
   .content_item > a > div:nth-child(2) {

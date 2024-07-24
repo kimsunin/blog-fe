@@ -6,7 +6,7 @@ export async function GET(request: NextRequest) {
   try {
     let {data, error} = await supabase
       .from('craf')
-      .select('id,title,date')
+      .select('id,title,date,img_url')
       .order("date", {ascending: false});
 
 
@@ -21,6 +21,7 @@ export async function GET(request: NextRequest) {
         id: craf.id,
         title: craf.title,
         date: craf.date,
+        img_url: craf.img_url,
       });
     });
 

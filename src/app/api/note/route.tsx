@@ -6,10 +6,8 @@ export async function GET(request: NextRequest) {
   try {
     let {data, error} = await supabase
       .from('note')
-      .select('id,title,date')
+      .select('id,title,date,img_url')
       .order("date", {ascending: false});
-
-    console.log(data)
 
     let groupedNotes: any = {};
 
@@ -22,6 +20,7 @@ export async function GET(request: NextRequest) {
         id: note.id,
         title: note.title,
         date: note.date,
+        img_url:note.img_url
       });
     });
 
