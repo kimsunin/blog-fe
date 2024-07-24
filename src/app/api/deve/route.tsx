@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import {supabase} from "@/utils/supabase";
 
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     let {data, error} = await supabase
       .from('deve')
