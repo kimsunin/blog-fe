@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import MarkDownView from "@/components/MarkDownView/MarkDownView";
 import RouteEdit from "@/components/RouteEdit/RouteEdit";
+import Comment from "@/components/Comment/Comment";
 
 function Page({ params }: { params: { id: string } }) {
   const [data, setData] = useState();
@@ -17,9 +18,11 @@ function Page({ params }: { params: { id: string } }) {
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
       <article>
-        <MarkDownView post={data} />
+        <MarkDownView post={data}/>
+        <RouteEdit href={`/edit/deve/${params.id}`}/>
       </article>
-      <RouteEdit href={`/edit/deve/${params.id}`}/>
+      <hr/>
+      <Comment/>
     </section>
   );
 }
