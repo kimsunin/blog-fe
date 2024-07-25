@@ -1,16 +1,16 @@
 "use client";
 import {useRouter} from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-import MdEditor from "@/components/MdEditor/MdEditor";
 import { useHook } from "@/hooks/useHook";
 import {useDialog} from "@/hooks/useDialog";
+import MdEditor from "@/components/MdEditor/MdEditor";
 import styles from "./page.module.css";
 
 
 function Page() {
   const router = useRouter();
   const change = useHook();
-  const {alert} = useDialog();
+  const {alert, confirm} = useDialog();
 
   const [visible, setVisible] = useState(false);
 
@@ -52,18 +52,25 @@ function Page() {
 
   const onSubmit = async() => {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {method: "post", body: JSON.stringify(editItem)});
-      const data = await res.json();
-      if (data.status == 200) {
-        alert(data.message).then(() => {
-          localStorage.removeItem("type")
-          localStorage.removeItem("title")
-          localStorage.removeItem("content")
-          router.push(`/${editItem.type}/${data.data[0].id}`);
-        });
-      } else {
-        alert(data.message);
-      }
+      confirm("글을 생성합니다").then(async (res) => {
+        if (res) {
+          const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {
+            method: "post",
+            body: JSON.stringify(editItem)
+          });
+          const data = await res.json();
+          if (data.status == 200) {
+            alert(data.message).then(() => {
+              localStorage.removeItem("type")
+              localStorage.removeItem("title")
+              localStorage.removeItem("content")
+              router.push(`/${editItem.type}/${data.data[0].id}`);
+            });
+          } else {
+            alert(data.message);
+          }
+        }
+      });
     } else {
       alert("비밀번호오류");
     }

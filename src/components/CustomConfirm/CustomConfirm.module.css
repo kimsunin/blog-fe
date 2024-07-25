@@ -1,0 +1,6 @@
+.custom_confirm {
+  @apply p-[10px] rounded-md relative;
+}
+.custom_confirm > div {
+  @apply mt-[10px] flex justify-between
+}

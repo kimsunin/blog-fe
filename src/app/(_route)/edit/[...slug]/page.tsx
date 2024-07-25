@@ -10,7 +10,7 @@ import {useDialog} from "@/hooks/useDialog";
 function Page({params}: { params: { slug: string[] } }) {
   const router = useRouter();
   const change = useHook()
-  const {alert} = useDialog();
+  const {alert, confirm} = useDialog();
 
   const [visible, setVisible] = useState(false);
 
@@ -39,13 +39,17 @@ function Page({params}: { params: { slug: string[] } }) {
 
   const deleteItem = async () => {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete"})
-      const data = await res.json();
-      if (data.status == 200) {
-        alert(data.message).then(() => router.replace(`/${params.slug[0]}`));
-      } else {
-        alert(data.message);
-      }
+      confirm("글을 삭제합니다").then(async (res) => {
+        if (res) {
+          const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete"})
+          const data = await res.json();
+          if (data.status == 200) {
+            alert(data.message).then(() => router.replace(`/${params.slug[0]}`));
+          } else {
+            alert(data.message);
+          }
+        }
+      })
     } else {
       alert("비밀번호오류")
     }
@@ -54,16 +58,18 @@ function Page({params}: { params: { slug: string[] } }) {
 
   const updateItem = async () => {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {
-        method: "post",
-        body: JSON.stringify(editItem)
+      confirm("글을 수정합니다").then(async (res) => {
+        if (res) {const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {
+          method: "post",
+          body: JSON.stringify(editItem)
+        })
+          const data = await res.json();
+          if(data.status == 200) {
+            alert(data.message).then(() => router.push(`/${params.slug[0]}/${params.slug[1]}`));
+          }else {
+            alert(data.message);
+          }}
       })
-      const data = await res.json();
-      if(data.status == 200) {
-        alert(data.message).then(() => router.push(`/${params.slug[0]}/${params.slug[1]}`));
-      }else {
-        alert(data.message);
-      }
     } else {
       alert("비밀번호오류")
     }
