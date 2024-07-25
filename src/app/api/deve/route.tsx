@@ -33,9 +33,9 @@ export async function GET() {
 
 
     if (data) {
-      return NextResponse.json({data: transformData, status: 200});
+      return NextResponse.json({data: transformData,message:"success",  status: 200});
     } else {
-      return NextResponse.json({data: "글이 존재하지 않습니다", status: 404});
+      return NextResponse.json({error:error, message: "글이 존재하지 않습니다", status: 404});
     }
 
   }

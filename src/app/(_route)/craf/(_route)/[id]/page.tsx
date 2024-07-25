@@ -19,11 +19,11 @@ function Page({params}: { params: { id: string } }) {
       if (res?.status == 200) {
         setData(res.data);
         setVisible(true);
-      }else {
-        alert(res.error).then(() => router.back());
+      } else {
+        alert(res.message).then(() => router.back());
       }
     });
-  }, [params.id]);
+  }, []);
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>

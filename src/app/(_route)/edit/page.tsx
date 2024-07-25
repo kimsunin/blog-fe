@@ -55,14 +55,14 @@ function Page() {
       const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {method: "post", body: JSON.stringify(editItem)});
       const data = await res.json();
       if (data.status == 200) {
-        alert(data.data).then(() => {
+        alert(data.message).then(() => {
           localStorage.removeItem("type")
           localStorage.removeItem("title")
           localStorage.removeItem("content")
           router.push(`/${editItem.type}/${data.data[0].id}`);
         });
       } else {
-        alert(data.error);
+        alert(data.message);
       }
     } else {
       alert("비밀번호오류");

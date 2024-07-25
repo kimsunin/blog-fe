@@ -17,7 +17,7 @@ function Page() {
         setData(res.data);
         setVisible(true);
       } else {
-        alert(res.error).then(() => router.back());
+        alert(res.message).then(() => router.back());
       }
     });
   }, []);

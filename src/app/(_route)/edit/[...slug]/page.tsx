@@ -43,9 +43,9 @@ function Page({params}: { params: { slug: string[] } }) {
       const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete"})
       const data = await res.json();
       if (data.status == 200) {
-        alert(data.data).then(() => router.replace(`/${params.slug[0]}`));
+        alert(data.message).then(() => router.replace(`/${params.slug[0]}`));
       } else {
-        alert(data.error)
+        alert(data.message);
       }
     } else {
       alert("비밀번호오류")
@@ -61,9 +61,9 @@ function Page({params}: { params: { slug: string[] } }) {
       })
       const data = await res.json();
       if(data.status == 200) {
-        alert(data.data).then(() => router.push(`/${params.slug[0]}/${params.slug[1]}`));
+        alert(data.message).then(() => router.push(`/${params.slug[0]}/${params.slug[1]}`));
       }else {
-        alert(data.error)
+        alert(data.message);
       }
     } else {
       alert("비밀번호오류")
@@ -76,7 +76,7 @@ function Page({params}: { params: { slug: string[] } }) {
         setVisible(true);
         setEditItem({title: res.data.title, content: res.data.content});
       } else {
-        alert(res.error).then(() => router.back());
+        alert(res.message).then(() => router.back());
       }
     });
   }, []);

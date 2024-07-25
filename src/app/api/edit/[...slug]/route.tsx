@@ -11,9 +11,9 @@ export async function GET(req: NextRequest, {params}: { params: { slug: string[]
       // Filters
       .eq('id', params.slug[1]).single();
     if(data) {
-      return NextResponse.json({data: data, status: 200});
+      return NextResponse.json({data: data, message:"success",status: 200});
     } else {
-      return NextResponse.json({error: "글이 존재하지 않습니다", status: 404});
+      return NextResponse.json({error: error, message: "글이 존재하지 않습니다", status: 404});
     }
   } catch(e){
     console.log(e);
@@ -22,14 +22,14 @@ export async function GET(req: NextRequest, {params}: { params: { slug: string[]
 
 export async function DELETE(req: NextRequest, {params}: { params: { slug: string[] } }) {
   try{
-    const { error } = await supabase
+    const {data, error} = await supabase
       .from(params.slug[0])
       .delete()
-      .eq('id', params.slug[1])
+      .eq('id', params.slug[1]);
     if(!error){
-      return NextResponse.json({data:"삭제가 완료되었습니다", status: 200});
+      return NextResponse.json({data:data, message: "삭제가 완료되었습니다", status: 200});
     } else {
-      return NextResponse.json({error:"삭제가 완료되지 않았습니다", status: 200});
+      return NextResponse.json({error:error, message: "삭제가 완료되지 않았습니다", status: 200});
     }
   } catch (e){
     console.log(e);
@@ -45,9 +45,9 @@ export async function POST(req: NextRequest, {params}: { params: { slug: string[
       .eq('id', params.slug[1])
       .select()
     if(data) {
-      return NextResponse.json({data: "글 수정이 완료되었습니다", status: 200});
+      return NextResponse.json({data: data, message: "글 수정이 완료되었습니다", status: 200});
     } else {
-      return NextResponse.json({error: "글 수정이 완료되지 않았습니다", status: 404});
+      return NextResponse.json({error:error, message: "글 수정이 완료되지 않았습니다", status: 404});
     }
   } catch (e){
     console.log(e);
