@@ -1,3 +1,4 @@
 .overlay {
-  @apply w-full h-full top-0 left-0 fixed flex justify-center items-center overflow-hidden;
+  @apply w-full h-full top-0 left-0 fixed flex justify-center items-center;
+
 }

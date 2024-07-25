@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {useDialog} from "@/hooks/useDialog";
 import ContentList from "@/components/ContentList/ContentList";
@@ -32,8 +32,7 @@ function Page() {
 async function getData() {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "craf");
-    const data = await res.json();
-    return data
+    return await res.json()
   } catch (e) {
     console.log(e);
   }

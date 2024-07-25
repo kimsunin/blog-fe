@@ -1,6 +1,5 @@
 import {NextRequest, NextResponse} from "next/server";
 import {supabase} from "@/utils/supabase";
-import {getToday} from "@/utils/getToday";
 
 
 export async function GET(req: NextRequest, {params}: { params: { slug: string[] } }) {

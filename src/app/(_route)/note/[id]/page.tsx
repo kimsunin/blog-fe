@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import {useDialog} from "@/hooks/useDialog";
 import MarkDownView from "@/components/MarkDownView/MarkDownView";
@@ -40,8 +40,7 @@ function Page({ params }: { params: { id: string } }) {
 const getData = async (id: string) => {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `note/${id}`);
-    const data = await res.json();
-    return data
+    return await res.json()
   } catch (e) {
     console.log(e);
   }

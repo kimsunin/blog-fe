@@ -5,7 +5,6 @@ import MdEditor from "@/components/MdEditor/MdEditor";
 import {useHook} from "@/hooks/useHook";
 import styles from "./page.module.css";
 import {useDialog} from "@/hooks/useDialog";
-import al from "refractor/lang/al";
 
 
 function Page({params}: { params: { slug: string[] } }) {
@@ -71,7 +70,7 @@ function Page({params}: { params: { slug: string[] } }) {
   };
 
   useEffect(() => {
-    const res = getData(params.slug[0], params.slug[1]).then((res) => {
+    getData(params.slug[0], params.slug[1]).then((res) => {
       if (res?.status == 200) {
         setVisible(true);
         setEditItem({title: res.data.title, content: res.data.content});
@@ -108,8 +107,7 @@ function Page({params}: { params: { slug: string[] } }) {
 const getData = async (type: string, id: string) => {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`, {method: "get"});
-    const data = await res.json();
-    return data
+    return await res.json()
   }catch (e){
     console.log(e)
   }
