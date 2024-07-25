@@ -15,17 +15,17 @@ export async function POST(req:NextRequest, res:NextResponse){
 
 
       if (data) {
-        return NextResponse.json({data: data}, {status: 200})
+        return NextResponse.json({data: "글 작성이 완료되었습니다", status: 200})
       } else {
-        return NextResponse.json({error: error?.message}, {status: 404});
+        return NextResponse.json({error: "글 작성이 완료되지 않았습니다", status: 404});
       }
     } else {
       if(!request.type) {
-        return NextResponse.json({error: "타입이 지정되지 않았습니다"}, {status: 404});
+        return NextResponse.json({error: "타입이 지정되지 않았습니다", status: 404});
       } else if (request.title == ""){
-        return NextResponse.json({error: "제목을 작성해주세요"}, {status:404});
+        return NextResponse.json({error: "제목을 작성해주세요", status:404});
       }else if (request.content == ""){
-        return NextResponse.json({error: "내용을 작성해주세요"}, {status: 404});
+        return NextResponse.json({error: "내용을 작성해주세요", status: 404});
       }
     }
   } catch (error) {

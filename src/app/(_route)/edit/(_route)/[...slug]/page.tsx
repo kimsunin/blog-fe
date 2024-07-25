@@ -4,13 +4,14 @@ import {useRouter} from "next/navigation";
 import MdEditor from "@/components/MdEditor/MdEditor";
 import {useHook} from "@/hooks/useHook";
 import styles from "./page.module.css";
+import {useDialog} from "@/hooks/useDialog";
+import al from "refractor/lang/al";
 
 
 function Page({params}: { params: { slug: string[] } }) {
-
   const router = useRouter();
   const change = useHook()
-
+  const {alert} = useDialog();
 
   const [visible, setVisible] = useState(false);
 
@@ -38,25 +39,33 @@ function Page({params}: { params: { slug: string[] } }) {
   );
 
   const deleteItem = async () => {
-    if(password == process.env.NEXT_PUBLIC_PASSWORD) {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL+ `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete"}).then((res)=>{
-        alert("삭제완료");
-        router.replace(`/${params.slug[0]}`);
-      })
-    } else{
+    if (password == process.env.NEXT_PUBLIC_PASSWORD) {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete"})
+      const data = await res.json();
+      if (data.status == 200) {
+        alert(data.data).then(() => router.replace(`/${params.slug[0]}`));
+      } else {
+        alert(data.error)
+      }
+    } else {
       alert("비밀번호오류")
     }
   };
 
 
   const updateItem = async () => {
-
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "post", body:JSON.stringify(editItem)}).then((res)=>{
-        alert("수정완료");
-        router.push(`/${params.slug[0]}/${params.slug[1]}`);
-      });
-    } else{
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {
+        method: "post",
+        body: JSON.stringify(editItem)
+      })
+      const data = await res.json();
+      if(data.status == 200) {
+        alert(data.data).then(() => router.push(`/${params.slug[0]}/${params.slug[1]}`));
+      }else {
+        alert(data.error)
+      }
+    } else {
       alert("비밀번호오류")
     }
   };
@@ -65,13 +74,12 @@ function Page({params}: { params: { slug: string[] } }) {
     const res = getData(params.slug[0], params.slug[1]).then((res) => {
       if (res?.status == 200) {
         setVisible(true);
-        setEditItem({title: res?.data.data.title, content: res?.data.data.content});
+        setEditItem({title: res.data.title, content: res.data.content});
       } else {
-        alert(res?.data.error)
-        router.back()
+        alert(res.error).then(() => router.back());
       }
     });
-  }, [params.slug, router]);
+  }, []);
 
 
   return <section className={`${styles.edit_section} ${visible ? "isvisible" : "isinvisible"}`}>
@@ -99,9 +107,9 @@ function Page({params}: { params: { slug: string[] } }) {
 
 const getData = async (type: string, id: string) => {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`);
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`, {method: "get"});
     const data = await res.json();
-    return {data: data, status: res.status};
+    return data
   }catch (e){
     console.log(e)
   }

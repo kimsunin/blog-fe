@@ -1,21 +1,30 @@
 "use client";
 import { useState, useEffect } from "react";
+import {useRouter} from "next/navigation";
+import {useDialog} from "@/hooks/useDialog";
 import ContentList from "@/components/ContentList/ContentList";
 
 function Page() {
+  const router = useRouter();
+  const {alert} = useDialog();
+
   const [data, setData] = useState();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     getData().then((res) => {
-      setData(res.data);
-      setVisible(true);
+      if (res?.status == 200) {
+        setData(res.data);
+        setVisible(true);
+      } else {
+        alert(res.status).then(() => router.back());
+      }
     });
   }, []);
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
-      <ContentList type="deve" data={data} />
+      <ContentList type="deve" data={data}/>
     </section>
   );
 }
@@ -23,8 +32,8 @@ function Page() {
 const getData = async () => {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "deve");
-    const data = res.json();
-    return data;
+    const data = await res.json();
+    return data
   } catch (e) {
     console.log(e);
   }

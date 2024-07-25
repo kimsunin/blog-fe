@@ -1,0 +1,6 @@
+.custom_alert {
+  @apply p-[10px] rounded-md relative;
+}
+.custom_alert > div {
+  @apply mt-[10px] flex justify-end
+}

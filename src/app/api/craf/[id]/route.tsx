@@ -14,14 +14,11 @@ export async function GET(
       .eq('id', id).single();
 
     if (data) {
-      return NextResponse.json({data: data?.content}, {status: 200});
+      return NextResponse.json({data: data?.content, status: 200});
     } else {
-      return NextResponse.json({data: "<p>File Not Found</p>  <a href=/>cd ~</a>"}, {status: 404});
+      return NextResponse.json({error: error?.message, status: 404});
     }
   } catch (error) {
-    return NextResponse.json(
-      { data: "<p>File Not Found</p>  <a href=/>cd ~</a>" },
-      { status: 404 }
-    );
+    console.log(error);
   }
 }

@@ -3,11 +3,14 @@ import {useRouter} from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import MdEditor from "@/components/MdEditor/MdEditor";
 import { useHook } from "@/hooks/useHook";
+import {useDialog} from "@/hooks/useDialog";
 import styles from "./page.module.css";
+
 
 function Page() {
   const router = useRouter();
   const change = useHook();
+  const {alert} = useDialog();
 
   const [visible, setVisible] = useState(false);
 
@@ -51,13 +54,14 @@ function Page() {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
       const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {method: "post", body: JSON.stringify(editItem)});
       const data = await res.json();
-      if(res.status == 200) {
-        alert("작성완료");
-        localStorage.removeItem("type")
-        localStorage.removeItem("title")
-        localStorage.removeItem("content")
-        router.push(`/${editItem.type}/${data.data[0].id}`);
-      } else if(res.status == 404) {
+      if (data.status == 200) {
+        alert(data.data).then(() => {
+          localStorage.removeItem("type")
+          localStorage.removeItem("title")
+          localStorage.removeItem("content")
+          router.push(`/${editItem.type}/${data.data[0].id}`);
+        });
+      } else {
         alert(data.error);
       }
     } else {

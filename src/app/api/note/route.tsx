@@ -30,8 +30,12 @@ export async function GET(request: NextRequest) {
       content: groupedNotes[year]
     }));
 
+    if (data) {
+      return NextResponse.json({data: transformData, status: 200});
+    } else {
+      return NextResponse.json({error: "글이 존재하지 않습니다", status: 404});
+    }
 
-    return NextResponse.json({data: transformData}, {status: 200});
   }
   catch (error) {
     console.log(error);

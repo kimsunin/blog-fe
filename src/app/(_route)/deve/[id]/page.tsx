@@ -1,19 +1,29 @@
 "use client";
 import { useEffect, useState } from "react";
+import {useRouter} from "next/navigation";
+import {useDialog} from "@/hooks/useDialog";
 import MarkDownView from "@/components/MarkDownView/MarkDownView";
 import RouteEdit from "@/components/RouteEdit/RouteEdit";
 import Comment from "@/components/Comment/Comment";
 
 function Page({ params }: { params: { id: string } }) {
+  const router = useRouter();
+  const {alert} = useDialog();
+
   const [data, setData] = useState();
   const [visible, setVisible] = useState(false);
 
+
   useEffect(() => {
     getData(params.id).then((res) => {
-      setData(res.data);
-      setVisible(true);
+      if(res?.status == 200){
+        setData(res.data);
+        setVisible(true);
+      } else {
+        alert(res.error).then(() => router.back());
+      }
     });
-  }, [params.id]);
+  }, []);
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
@@ -30,8 +40,8 @@ function Page({ params }: { params: { id: string } }) {
 const getData = async (id: string) => {
   try {
     const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `deve/${id}`);
-    const data = res.json();
-    return data;
+    const data = await res.json();
+    return data
   } catch (e) {
     console.log(e);
   }
