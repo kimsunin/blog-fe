@@ -1,5 +1,5 @@
 .blur_layer {
-  @apply w-full h-[80px] fixed top-0 pointer-events-none;
+  @apply w-full h-[80px] fixed top-0 pointer-events-none z-10;
   backdrop-filter: blur(5px);
   mask-image: linear-gradient(to bottom, #000000 25%, transparent);
 }
