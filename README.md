@@ -4,7 +4,7 @@
 
 ---
 
-### Develop space of kimsunin
+### Develop space of kimsunin - 김선인의 개발공간
 
 개발에 관한 모든 고민과 고찰을 기록하고 기억하기 위한 공간
 
@@ -22,25 +22,33 @@
 
 ### 0. Page
 
-home([https://megadev.me](https://megadeve)) - 김선인의 간략한 소개, 링크
+home([https://megadev.me](https://megadev.me)) - 김선인의 간략한 소개, 링크
 
-deve([https://megadev,me/deve](https://megadeve/deve)) - 개발에 관한 것들을 기록하는 공간
+deve([https://megadev.me/deve](https://megadev.me/deve)) - 개발에 관한 것들을 기록하는 공간
 
-note([https://megadev.me/note](https://megadeve/note)) - 자유롭게 기록하고 기억하는 공간
+note([https://megadev.me/note](https://megadev.me/note)) - 자유롭게 기록하고 기억하는 공간
 
-craf([https://megadev.me/craf](https://megadeve/craf)) - 직접 만들고 보여주기 위한 공간
+craf([https://megadev.me/craf](https://megadev.me/craf)) - 직접 만들고 보여주기 위한 공간
 
 ---
 
 ### 1. Dark Mode
 
-블로그 최상단에 위치한 태양, 달 로고로 다크모드 전환
+블로그 최상단에 위치한 태양, 달 아이콘을 통한 다크모드 전환
 
 테마 변경으로 사용자는 자신에게 맞는 환경에 적응할 수 있음
 
 ---
 
-### 2. Header
+### 2. Sound Mode
+
+블로그 최상단의 스피커 아이콘을 통한 사운드 모드 전환
+
+사용자의 환경을 고려하여 음소거 모드를 지원함
+
+---
+
+### 3. Header
 
 로고와 블로그 이름, 테마 아이콘
 
@@ -48,7 +56,7 @@ craf([https://megadev.me/craf](https://megadeve/craf)) - 직접 만들고 보여
 
 ---
 
-### 2. Navigation
+### 4. Navigation
 
 페이지 이동을 위한 navigation배치
 
@@ -56,11 +64,10 @@ next js Link로 빠른 페이지이동
 
 페이지별 링크로 사용자에게 직관적인 ui를 제공
 
-
 ---
 
-### 3. markdown
+### 5. markdown
 
-md파일을 통한 간편한 글 생성
+md editor를 통한 간편한 글 생성
 
-md파일로 블로그 글을 간단하게 렌더링
+ReactMarkDown으로 블로그 글을 간단하게 렌더링
