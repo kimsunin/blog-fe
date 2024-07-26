@@ -38,54 +38,19 @@ function DialogProvider({children}: PropsType) {
 
   const confirm = (message?: string): Promise<boolean> => {
     return new Promise((resolve) => {
-      // state를 변경해 Confirm 다이얼로그를 띄운다.
       setState({
         message: message ?? '',
         onClickOk: () => {
-          // ok 클릭한 경우, 다이얼로그 닫고 true로 Promise 종료
           setState(undefined);
           resolve(true);
         },
         onClickCancel: () => {
-          // cancel 클릭한 경우, 다이얼로그 닫고 false로 Promise 종료
           setState(undefined);
           resolve(false);
         },
       });
     });
   };
-
-
-  // const [alertState, setAlertState] = useState<AlertState>()
-  // const [confirmState, setConfirmState] = useState<ConfirmState>();
-  //
-  // const alert = (message?: string): Promise<boolean> => {
-  //   return new Promise((resolve) => {
-  //     setAlertState({
-  //       message: message ?? '',
-  //       onClickOk: () => {
-  //         setAlertState(undefined);
-  //         resolve(true);
-  //       },
-  //     });
-  //   });
-  // };
-  //
-  // const confirm = (message?: string): Promise<boolean> => {
-  //   return new Promise((resolve) => {
-  //     setConfirmState({
-  //       message: message ?? '',
-  //       onClickOk: () => {
-  //         setConfirmState(undefined);
-  //         resolve(true);
-  //       },
-  //       onClickCancel: () => {
-  //         setConfirmState(undefined);
-  //         resolve(false);
-  //       },
-  //     });
-  //   });
-  // };
 
   const isConfirmState = (state: ConfirmState | AlertState): state is ConfirmState => {
     return (state as ConfirmState).onClickCancel !== undefined;
