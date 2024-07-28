@@ -11,7 +11,7 @@ function CustomConfirm({message, onClickOk, onClickCancel}: PropsType) {
     <span>{message}</span>
     <div>
       <button onClick={onClickCancel}>취소</button>
-      <button onClick={onClickOk}>확인</button>
+      <button onClick={onClickOk} autoFocus>확인</button>
     </div>
   </div>;
 }

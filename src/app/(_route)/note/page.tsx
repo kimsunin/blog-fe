@@ -25,7 +25,7 @@ function Page() {
 
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
-      <ContentList type="note" data={data} />
+      <ContentList type="note" data={data}/>
     </section>
   );
 }

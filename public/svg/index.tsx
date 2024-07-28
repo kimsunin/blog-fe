@@ -7,6 +7,7 @@ import NotionIc from "./notion.svg";
 import SoundOnIc from "./soundon.svg";
 import SoundOffIc from "./soundoff.svg";
 import ErrorImgIc from "./errorimg.svg"
+import CalendarIc from "./calendar.svg";
 
 export {
   HomeIc,
@@ -17,5 +18,6 @@ export {
   NotionIc,
   SoundOnIc,
   SoundOffIc,
-  ErrorImgIc
+  ErrorImgIc,
+  CalendarIc,
 };

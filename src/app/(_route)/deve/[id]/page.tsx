@@ -5,12 +5,13 @@ import {useDialog} from "@/hooks/useDialog";
 import MarkDownView from "@/components/MarkDownView/MarkDownView";
 import RouteEdit from "@/components/RouteEdit/RouteEdit";
 import Comment from "@/components/Comment/Comment";
+import ContentTitle from "@/components/ContentTitle/ContentTitle";
 
 function Page({ params }: { params: { id: string } }) {
   const router = useRouter();
   const {alert} = useDialog();
 
-  const [data, setData] = useState();
+  const [data, setData] = useState<ContentDetailType>();
   const [visible, setVisible] = useState(false);
 
 
@@ -28,7 +29,8 @@ function Page({ params }: { params: { id: string } }) {
   return (
     <section className={visible ? "isvisible" : "isinvisible"}>
       <article>
-        <MarkDownView post={data}/>
+        <ContentTitle title={data?.title} date={data?.date}/>
+        <MarkDownView post={data?.content}/>
         <RouteEdit href={`/edit/deve/${params.id}`}/>
       </article>
       <hr/>
