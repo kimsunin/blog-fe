@@ -3,13 +3,13 @@
 }
 
 .markdownview h1 {
-  @apply text-[20px];
+  @apply text-[22px] font-medium;
 }
 .markdownview h2 {
-  @apply text-[18px];
+  @apply text-[20px] font-medium;
 }
 .markdownview h3 {
-  @apply text-[16px];
+  @apply text-[18px] font-medium;
 }
 
 .markdownview hr {
