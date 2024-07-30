@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply scroll-smooth text-black/80 dark:text-white/70;
+  @apply scroll-smooth text-black/80 dark:text-white/60;
 }
 
 a,

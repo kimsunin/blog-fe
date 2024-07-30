@@ -1,5 +1,5 @@
-import ReactMarkdown from "react-markdown";
-// 플로그인
+import Markdown from "react-markdown";
+// 플러그인
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 // 스타일
@@ -11,13 +11,13 @@ type PropsType = {
 
 function MarkDownView({ post }: PropsType) {
   return (
-    <ReactMarkdown
-      className={styles.markdownview}
-      rehypePlugins={[rehypeRaw]}
+    <Markdown
+      className={styles.markdown_view}
+      rehypePlugins={[rehypeRaw,]}
       remarkPlugins={[remarkGfm]}
     >
       {post}
-    </ReactMarkdown>
+    </Markdown>
   );
 }
 

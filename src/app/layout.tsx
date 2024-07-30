@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import { Inter } from "next/font/google";
+import {Inter, Noto_Sans} from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/layouts/ThemeProvider/ThemeProvider";
 import RootContainer from "@/layouts/RootContainer/RootContainer";
@@ -10,7 +10,7 @@ import DialogProvider from "@/layouts/DialogProvider/DialogProvider";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: "300",
+  weight: "400",
 });
 
 export const metadata: Metadata = {

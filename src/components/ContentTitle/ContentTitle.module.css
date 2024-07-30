@@ -1,6 +1,6 @@
 
 .content_title > h1{
-  @apply mb-[20px] flex justify-center text-[24px] font-medium
+  @apply mb-[20px] flex justify-center text-center text-[24px] font-medium
 }
 .content_title > div {
   @apply flex justify-center items-center opacity-60

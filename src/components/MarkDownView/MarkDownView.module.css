@@ -1,32 +1,35 @@
-.markdownview * {
-  @apply my-[16px] text-[14px];
+.markdown_view * {
+  @apply my-[16px]
 }
 
-.markdownview h1 {
-  @apply text-[22px] font-medium;
+.markdown_view h1 {
+  @apply mt-[40px] text-[22px] font-medium;
 }
-.markdownview h2 {
-  @apply text-[20px] font-medium;
+.markdown_view h2 {
+  @apply mt-[36px] text-[20px] font-medium;
 }
-.markdownview h3 {
-  @apply text-[18px] font-medium;
+.markdown_view h3 {
+  @apply mt-[32px] text-[18px] font-medium;
+}
+.markdown_view h4 {
+  @apply mt-[28px] text-[16px] font-medium;
 }
 
-.markdownview hr {
-  @apply my-[20px] border-[1px];
+.markdown_view hr {
+  @apply my-[40px] border-[1px];
 }
 
-.markdownview a {
+.markdown_view a {
   @apply m-0 text-blue-400;
 }
-.markdownview input {
+.markdown_view input {
   @apply m-0;
 }
 
-.markdownview pre {
+.markdown_view pre {
   @apply my-[20px] px-[10px] p-[6px] overflow-hidden whitespace-pre-wrap rounded-md;
 }
 
-.markdownview img {
+.markdown_view img {
   @apply w-full object-cover rounded-md;
 }
