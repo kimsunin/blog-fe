@@ -30,7 +30,7 @@
     "rehype-highlight": "^7.0.0",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
-    "supabase": "^1.183.5",
+    "supabase": "^1.187.10",
     "three": "^0.167.0"
   },
   "devDependencies": {
