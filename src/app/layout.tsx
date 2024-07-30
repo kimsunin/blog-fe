@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import {Inter, Noto_Sans} from "next/font/google";
+import {Noto_Sans} from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/layouts/ThemeProvider/ThemeProvider";
 import RootContainer from "@/layouts/RootContainer/RootContainer";
@@ -8,7 +8,7 @@ import BlurLayer from "@/layouts/BlurLayer/BlurLayer";
 import SoundProvider from "@/layouts/SoundProvider/SoundProvider";
 import DialogProvider from "@/layouts/DialogProvider/DialogProvider";
 
-const inter = Inter({
+const inter = Noto_Sans({
   subsets: ["latin"],
   weight: "400",
 });

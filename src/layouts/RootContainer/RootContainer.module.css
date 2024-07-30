@@ -1,5 +1,5 @@
 .root_container {
-  @apply transition-w duration-500 font-mono;
+  @apply transition-w duration-500;
 }
 
 @screen pc {

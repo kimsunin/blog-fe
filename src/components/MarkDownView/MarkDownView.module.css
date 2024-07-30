@@ -27,7 +27,7 @@
 }
 
 .markdown_view pre {
-  @apply my-[20px] px-[10px] p-[6px] overflow-hidden whitespace-pre-wrap rounded-md;
+  @apply my-[20px] px-[10px] p-[6px] overflow-hidden whitespace-pre-wrap rounded-md text-[14px];
 }
 
 .markdown_view img {
