@@ -26,6 +26,14 @@
   @apply m-0;
 }
 
+.markdown_view ol {
+  @apply list-decimal pl-[2rem]
+}
+
+.markdown_view ul {
+  @apply pl-[2rem]
+}
+
 .markdown_view pre {
   @apply my-[20px] px-[10px] p-[6px] overflow-hidden whitespace-pre-wrap rounded-md text-[14px];
 }

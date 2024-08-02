@@ -13,8 +13,9 @@ function MarkDownView({ post }: PropsType) {
   return (
     <Markdown
       className={styles.markdown_view}
-      rehypePlugins={[rehypeRaw,]}
-      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
+      remarkPlugins={[[remarkGfm]]}
+      components={{a: (props: any) => <a target="_blank" {...props} />}}
     >
       {post}
     </Markdown>
