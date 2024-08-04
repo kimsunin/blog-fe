@@ -24,6 +24,7 @@ input {
 hr {
   @apply border-black/5 dark:border-white/10;
 }
+
 pre {
   @apply bg-black/5 dark:bg-white/10;
 }

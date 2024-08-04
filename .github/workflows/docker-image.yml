@@ -41,7 +41,7 @@ jobs:
       with:
         context: .
         file: ./Dockerfile
-        platforms: linux/arm64/v8
+        platforms: linux/arm64
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/blog-fe:latest
 
@@ -58,7 +58,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-            cd ~/docker-compose/blog/blog-fe
+            cd ~/docker-compose/blog
             docker-compose down
             docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/blog-fe" | awk '{print $3}')
             docker-compose up -d
