@@ -42,7 +42,6 @@ function Comment() {
   }, [theme]);
 
 
-
   return <div className={styles.giscus_comment} ref={ref}></div>;
 }
 
