@@ -4,6 +4,7 @@ import {useRouter} from "next/navigation";
 import {useDialog} from "@/hooks/useDialog";
 import ContentList from "@/components/ContentList/ContentList";
 
+
 function Page() {
   const router = useRouter();
   const {alert} = useDialog();

@@ -14,7 +14,7 @@ export default function Home() {
     <main id="main">
       <section className={visible ? "isvisible" : "isinvisible"}>
         <article>
-          <p>김선인의 개발공간</p>
+          <p><Link href="/about"><strong>김선인</strong></Link>의 개발공간</p>
           <p>
             단순히 만드는 것에 그치지 않으며
             <Link href="/edit">

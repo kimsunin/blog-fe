@@ -1,0 +1,86 @@
+@screen pc {
+  .section_1 {
+    @apply grid grid-cols-2
+  }
+  .section_1 > div:nth-child(1) {
+    @apply items-center
+  }
+  .section_1 > div:nth-child(1) > div {
+    @apply w-[140px] h-[140px] rounded-md
+  }
+  .section_1 > div:nth-child(2) > h1 {
+    @apply text-[26px] font-medium
+  }
+  .section_1 > div:nth-child(2) > h2 {
+    @apply mt-[20px]
+  }
+  .section_1 > div:nth-child(2) > div {
+    @apply mt-[20px]
+  }
+  .section_1 > div:nth-child(2) > div > a {
+    @apply mr-[6px] p-[4px]
+  }
+
+  .section_2 > div img {
+    @apply w-auto h-auto my-0 ml-0 mr-[6px] inline-block
+  }
+}
+
+@screen tablet {
+  .section_1 {
+    @apply grid grid-cols-2
+  }
+  .section_1 > div:nth-child(1) {
+    @apply items-center
+  }
+  .section_1 > div:nth-child(1) > div {
+    @apply w-[140px] h-[140px] rounded-md
+  }
+  .section_1 > div:nth-child(2) > h1 {
+    @apply text-[26px] font-medium
+  }
+  .section_1 > div:nth-child(2) > h2 {
+    @apply mt-[20px]
+  }
+  .section_1 > div:nth-child(2) > div {
+    @apply mt-[20px]
+  }
+  .section_1 > div:nth-child(2) > div > a {
+    @apply mr-[6px] p-[4px]
+  }
+
+  .section_2 > div img {
+    @apply w-auto h-auto my-0 ml-0 mr-[6px] inline-block
+  }
+}
+
+@screen mobile {
+  .section_1 {
+    @apply grid grid-cols-1
+  }
+  .section_1 > div:nth-child(1) {
+    @apply flex justify-center items-center
+  }
+  .section_1 > div:nth-child(1) > div {
+    @apply w-[140px] h-[140px] rounded-md
+  }
+  .section_1 > div:nth-child(2) {
+    @apply mt-[20px]
+  }
+  .section_1 > div:nth-child(2) > h1 {
+    @apply text-center text-[26px] font-medium
+  }
+  .section_1 > div:nth-child(2) > h2 {
+    @apply mt-[20px] text-center
+  }
+  .section_1 > div:nth-child(2) > div {
+    @apply mt-[20px] flex justify-center
+  }
+  .section_1 > div:nth-child(2) > div > a {
+    @apply mr-[6px] p-[4px]
+  }
+
+  .section_2 > div img {
+    @apply w-auto h-auto my-0 ml-0 mr-[6px] inline-block
+  }
+}
