@@ -16,7 +16,7 @@
 }
 
 .markdown_view hr {
-  @apply my-[40px] border-[1px];
+  @apply my-[40px];
 }
 
 .markdown_view a {

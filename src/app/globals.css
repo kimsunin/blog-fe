@@ -29,6 +29,10 @@ pre {
   @apply bg-black/5 dark:bg-white/10;
 }
 
+tr, th, td {
+  @apply p-[6px] border border-black/5 dark:border-white/10;
+}
+
 .isvisible {
   @apply opacity-100 duration-1000;
 }
