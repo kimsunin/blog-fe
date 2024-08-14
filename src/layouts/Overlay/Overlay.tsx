@@ -12,7 +12,7 @@ function Overlay({children}: PropsType) {
 
   useEffect(() => {
     const $body = document.querySelector("body");
-    if($body) {
+    if ($body) {
       const overflow = $body.style.overflow;
       $body.style.overflow = "hidden";
       return () => {

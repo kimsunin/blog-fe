@@ -1,0 +1,12 @@
+.custom_prompt {
+  @apply p-[10px] rounded-md relative
+}
+.custom_prompt > span {
+  @apply block
+}
+.custom_prompt > input {
+  @apply mt-[10px]
+}
+.custom_prompt > div {
+  @apply mt-[10px] flex justify-between
+}
