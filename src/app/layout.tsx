@@ -22,7 +22,18 @@ export const metadata: Metadata = {
   },
   description: "develope space of kimsunin",
   icons: {
-    icon: "/svg/favicon.svg",
+    icon: [
+      {
+        rel: 'icon',
+        url: "/svg/favicon-black.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: 'icon',
+        url: "/svg/favicon-white.svg",
+        media: "(prefers-color-scheme: dark)",
+      }
+    ],
   },
 };
 
