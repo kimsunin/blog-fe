@@ -112,7 +112,7 @@ function Page({params}: { params: { slug: string[] } }) {
 
 const getData = async (type: string, id: string) => {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`, {method: "get"});
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${type}/${id}`, {cache: 'no-store' });
     return await res.json()
   }catch (e){
     console.log(e)

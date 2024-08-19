@@ -31,7 +31,7 @@ function Page() {
 
 async function getData() {
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "craf");
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "craf", {cache: 'no-store' });
     return await res.json()
   } catch (e) {
     console.log(e);
