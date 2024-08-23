@@ -1,15 +1,19 @@
-import {NextResponse} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import {supabase} from "@/utils/supabase";
 
 
-export async function GET() {
-  try {
-    let {data, error} = await supabase
-      .from('craf')
-      .select('id,title,date,img_url')
-      .order("date", {ascending: false});
+export async function GET(req: NextRequest) {
+  console.log(await req.json());
 
 
+
+  let {data, error} = await supabase
+    .from('craf')
+    .select('id,title,date,img_url')
+    .order("date", {ascending: false});
+
+
+  if (data) {
     let groupedNotes: any = {};
 
     data?.forEach(craf => {
@@ -32,14 +36,8 @@ export async function GET() {
     }));
 
 
-    if (data) {
-      return NextResponse.json({data: transformData, message: "success", status: 200});
-    } else {
-      return NextResponse.json({error:error, message: "글이 존재하지 않습니다", status: 404});
-    }
-  }
-
-  catch (error) {
-    console.log(error);
+    return NextResponse.json({data: transformData, message: "success", status: 200});
+  } else {
+    return NextResponse.json({error: error, message: "글이 존재하지 않습니다", status: 404});
   }
 }

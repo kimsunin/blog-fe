@@ -3,19 +3,20 @@ import {supabase} from "@/utils/supabase";
 
 
 export async function GET(req: NextRequest, {params}: { params: { slug: string[] } }) {
-  try{
-    let {data, error} = await supabase
-      .from(params.slug[0])
-      .select("title, content")
-      // Filters
-      .eq('id', params.slug[1]).single();
-    if(data) {
-      return NextResponse.json({data: data, message:"success",status: 200});
-    } else {
-      return NextResponse.json({error: error, message: "글이 존재하지 않습니다", status: 404});
-    }
-  } catch(e){
-    console.log(e);
+  console.log(await req.json());
+
+
+  let {data, error} = await supabase
+    .from(params.slug[0])
+    .select("title, content")
+    // Filters
+    .eq('id', params.slug[1]).single();
+
+
+  if (data) {
+    return NextResponse.json({data: data, message: "success", status: 200});
+  } else {
+    return NextResponse.json({error: error, message: "글이 존재하지 않습니다", status: 404});
   }
 }
 

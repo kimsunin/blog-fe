@@ -49,9 +49,9 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-# Copy package.json and node_modules to make npm start work
-COPY --from=deps /app/package.json ./package.json
-COPY --from=deps /app/node_modules ./node_modules
+## Copy package.json and node_modules to make npm start work
+#COPY --from=deps /app/package.json ./package.json
+#COPY --from=deps /app/node_modules ./node_modules
 
 USER nextjs
 
@@ -61,4 +61,4 @@ ENV PORT 3000
 # set hostname to localhost
 ENV HOSTNAME "0.0.0.0"
 
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
