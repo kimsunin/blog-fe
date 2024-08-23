@@ -56,7 +56,8 @@ function Page() {
         if (res) {
           const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "edit", {
             method: "post",
-            body: JSON.stringify(editItem)
+            body: JSON.stringify(editItem),
+            cache: 'no-store',
           });
           const data = await res.json();
           if (data.status == 200) {

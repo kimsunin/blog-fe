@@ -41,7 +41,7 @@ function Page({params}: { params: { slug: string[] } }) {
     if (password == process.env.NEXT_PUBLIC_PASSWORD) {
       confirm("글을 삭제합니다").then(async (res) => {
         if (res) {
-          const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete"})
+          const res = await fetch(process.env.NEXT_PUBLIC_API_URL + `edit/${params.slug[0]}/${params.slug[1]}`, {method: "delete",   cache: 'no-store',})
           const data = await res.json();
           if (data.status == 200) {
             alert(data.message).then(() => router.replace(`/${params.slug[0]}`));
