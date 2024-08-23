@@ -11,7 +11,6 @@ export async function GET(req: NextRequest) {
     .select('id,title,date,img_url')
     .order("date", {ascending: false});
 
-  console.log(data);
 
   if (data) {
     let groupedNotes: any = {};
