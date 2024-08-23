@@ -4,7 +4,7 @@ import {supabase} from "@/utils/supabase";
 
 export async function GET(req: NextRequest) {
 
-  console.log(await req.json());
+  console.log(req.json());
 
   let {data, error} = await supabase
     .from('about')

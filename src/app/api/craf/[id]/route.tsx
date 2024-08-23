@@ -6,7 +6,7 @@ export async function GET(
   {params}: { params: { id: string } }
 ) {
 
-  console.log(await req.json());
+  console.log(req.json());
 
   let id = params.id;
   let {data, error} = await supabase

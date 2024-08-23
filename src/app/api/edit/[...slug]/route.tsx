@@ -3,7 +3,7 @@ import {supabase} from "@/utils/supabase";
 
 
 export async function GET(req: NextRequest, {params}: { params: { slug: string[] } }) {
-  console.log(await req.json());
+  console.log(req.json());
 
 
   let {data, error} = await supabase
