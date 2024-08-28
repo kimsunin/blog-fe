@@ -1,44 +1,29 @@
-@screen pc {
-  .header {
-    @apply w-full h-[40px];
-  }
-  .header > div {
+.header {
+  @apply w-full;
+}
+.header > div {
     @apply w-full h-full flex justify-between items-center;
   }
-  .header > div > div {
+.header > div > div {
     @apply flex items-center;
   }
-  .header > div > div > span {
+.header > div > div > span {
     @apply ml-[10px] text-[18px];
   }
+.header > div > div > button {
+  @apply w-[40px] h-[40px] justify-center
 }
 
-@screen tablet {
-  .header {
-    @apply w-full h-[40px];
-  }
-  .header > div {
-    @apply w-full h-full flex justify-between items-center;
-  }
-  .header > div > div {
-    @apply flex items-center;
-  }
-  .header > div > div > span {
-    @apply ml-[10px] text-[18px];
-  }
+.header > form {
+  @apply w-full rounded-md overflow-hidden duration-300
+}
+.header > form > input {
+  @apply w-full h-full border-none text-[14px]
 }
 
-@screen mobile {
-  .header {
-    @apply w-full h-[40px];
-  }
-  .header > div {
-    @apply w-full h-full flex justify-between items-center;
-  }
-  .header > div > div {
-    @apply flex items-center;
-  }
-  .header > div > div > span {
-    @apply ml-[10px] text-[18px];
-  }
+.search_on {
+  @apply h-[40px] border
+}
+.search_off {
+  @apply h-0 border-x
 }
