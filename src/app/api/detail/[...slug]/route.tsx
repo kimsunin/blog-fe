@@ -1,21 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 import {supabase} from "@/utils/supabase";
 
-export async function GET(
-  req: NextRequest,
-  {params}: { params: { id: string } }
-) {
+export async function GET(req: NextRequest, {params}: { params: { slug: string[] } }) {
   console.log(req.json());
 
-
-  let id = params.id;
   let {data, error} = await supabase
-    .from('note')
-    .select("title, content, date")
+    .from(params.slug[0])
+    .select("title,content,date")
     // Filters
-    .eq('id', id).single();
+    .eq('id', params.slug[1]).single();
 
-  console.log(data);
 
   if (data) {
     return NextResponse.json({data: data, message: "success", status: 200});

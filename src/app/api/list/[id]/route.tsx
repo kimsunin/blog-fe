@@ -2,36 +2,38 @@ import {NextRequest, NextResponse} from "next/server";
 import {supabase} from "@/utils/supabase";
 
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest, {params}: { params: { id: string } }) {
 
   console.log(req.json());
 
   let {data, error} = await supabase
-    .from('note')
+    .from(params.id)
     .select('id,title,date,img_url')
     .order("date", {ascending: false});
 
 
   if (data) {
-    let groupedNotes: any = {};
+    let groupedData: any = {};
 
-    data?.forEach(note => {
-      const year = note.date.slice(0, 4);
-      if (!groupedNotes[year]) {
-        groupedNotes[year] = [];
+    data?.forEach(item => {
+      const year = item.date.slice(0, 4);
+      if (!groupedData[year]) {
+        groupedData[year] = [];
       }
-      groupedNotes[year].push({
-        id: note.id,
-        title: note.title,
-        date: note.date,
-        img_url: note.img_url
+      groupedData[year].push({
+        id: item.id,
+        title: item.title,
+        date: item.date,
+        img_url: item.img_url
       });
     });
 
-    const transformData = Object.keys(groupedNotes).map(year => ({
+
+    const transformData = Object.keys(groupedData).map(year => ({
       year: year,
-      content: groupedNotes[year]
+      content: groupedData[year]
     }));
+
 
     return NextResponse.json({data: transformData.reverse(), message: "success", status: 200});
   } else {

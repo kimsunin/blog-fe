@@ -32,7 +32,7 @@ function Page() {
 }
 
 async function getData() {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "note", {method:"get", cache: 'no-store'});
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL + "list/note", {method:"get", cache: 'no-store'});
   return res.json();
 }
 
