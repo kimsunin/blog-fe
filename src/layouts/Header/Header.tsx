@@ -16,8 +16,11 @@ function Header() {
 
   const onSubmit = (e:any) => {
     e.preventDefault();
-    router.push(`/search/${value}`)
+    if(value !== "") {
+      router.push(`/search/${value}`)
+    }
   }
+
 
   return (
     <header className={styles.header}>
