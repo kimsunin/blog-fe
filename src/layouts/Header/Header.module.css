@@ -8,8 +8,8 @@
     @apply flex items-center;
   }
 .header > div > div > span {
-    @apply ml-[10px] text-[18px];
-  }
+  @apply text-[20px];
+}
 .header > div > div > button {
   @apply w-[40px] h-[40px] justify-center
 }

@@ -26,8 +26,7 @@ function Header() {
     <header className={styles.header}>
       <div>
         <div>
-          <HomeIc/>
-          <span>KIMSI</span>
+          <span>KIMSI.ME</span>
         </div>
         <div>
           <button onClick={()=>setOnClick(!onClick)}><SearchIc/></button>
