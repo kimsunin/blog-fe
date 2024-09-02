@@ -34,7 +34,7 @@ function Header() {
           <ThemeSwitch/>
         </div>
       </div>
-      <form onSubmit={(e)=>onSubmit(e)} className={`${onClick ? styles.search_on : styles.search_off} dark:border-white/10`}>
+      <form onSubmit={(e)=>onSubmit(e)} className={`${onClick ? styles.search_on : styles.search_off} border-black/5 dark:border-white/10`}>
         <input placeholder="검색어를 입력하세요" value={value} onChange={(e)=>setValue(e.target.value)}/>
       </form>
     </header>

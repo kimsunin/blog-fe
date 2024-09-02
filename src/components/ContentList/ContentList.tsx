@@ -13,7 +13,7 @@ function ContentList({ type, data }: PropsType) {
       <li key={index} className={styles.content_item}>
         <Link href={`/${type}/${item.id}`} className="border border-black/5 dark:border-white/10">
           <CustomImage src={item.img_url}/>
-          <div>
+          <div className="border-t border-black/5 dark:border-white/10">
             <h1>{item.title}</h1>
             <span>{item.date}</span>
           </div>
