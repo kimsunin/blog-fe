@@ -23,7 +23,6 @@ function Page({params}: {params: {id: string}}) {
 
   useEffect(() => {
     getData(params.id).then((res)=>{
-      console.log(res.data)
      if(res.status == 200){
        setData(Object.values(res.data))
        setVisible(true);

@@ -4,7 +4,6 @@ import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 // 스타일
 import styles from "./MarkDownView.module.css";
-import CustomLink from "@/components/CustomLink/CustomLink";
 
 type PropsType = {
   post: string | undefined;
