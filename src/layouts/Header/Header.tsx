@@ -4,7 +4,7 @@ import {useRouter} from "next/navigation";
 import SoundSwitch from "@/components/SoundSwitch/SoundSwitch";
 import ThemeSwitch from "@/components/ThemeSwitch/ThemeSwitch";
 import styles from "./Header.module.css";
-import {HomeIc, SearchIc} from "svg/index";
+import {SearchIc} from "svg/index";
 
 
 
