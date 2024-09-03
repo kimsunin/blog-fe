@@ -1,4 +1,3 @@
-import HomeIc from "./home.svg";
 import MoonIc from "./moon.svg";
 import SunIc from "./sun.svg";
 import LinkIc from "./link.svg";
@@ -11,7 +10,6 @@ import CalendarIc from "./calendar.svg";
 import SearchIc from "./search.svg";
 
 export {
-  HomeIc,
   SunIc,
   MoonIc,
   LinkIc,
