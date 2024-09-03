@@ -9,6 +9,7 @@
   }
 .header > div > div > span {
   @apply text-[20px];
+  font-family: '__Noto_Sans_4cce57', serif;
 }
 .header > div > div > button {
   @apply w-[40px] h-[40px] justify-center
