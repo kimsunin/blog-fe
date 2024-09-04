@@ -49,14 +49,14 @@
 
   /*item*/
   .content_item{
-    @apply w-full h-[300px]
+    @apply w-full h-[260px]
   }
   .content_item > a {
     @apply w-full h-full px-0 block
   }
   /*이미지영역*/
   .content_item > a > div:nth-child(1) {
-    @apply w-full h-[200px] rounded-t-md
+    @apply w-full h-[160px] rounded-t-md
   }
   .content_item > a > div:nth-child(1) > img{
     @apply rounded-t-md
@@ -84,14 +84,14 @@
 
   /*item*/
   .content_item{
-    @apply w-full h-[300px]
+    @apply w-full h-[220px]
   }
   .content_item > a {
     @apply w-full h-full px-0 block
   }
   /*이미지영역*/
   .content_item > a > div:nth-child(1) {
-    @apply w-full h-[200px] rounded-t-md
+    @apply w-full h-[120px] rounded-t-md
   }
   .content_item > a > div:nth-child(1) > img{
     @apply rounded-t-md
