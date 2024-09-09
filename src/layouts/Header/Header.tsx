@@ -26,7 +26,7 @@ function Header() {
     <header className={styles.header}>
       <div>
         <div>
-          <span>KIMSI.ME</span>
+          <h1>KIMSI.ME</h1>
         </div>
         <div>
           <button onClick={()=>setOnClick(!onClick)}><SearchIc/></button>

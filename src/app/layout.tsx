@@ -10,7 +10,6 @@ import DialogProvider from "@/layouts/DialogProvider/DialogProvider";
 
 const inter = Noto_Sans({
   subsets: ["latin"],
-  weight: "400",
 });
 
 export const metadata: Metadata = {

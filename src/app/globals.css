@@ -39,6 +39,7 @@ tr, th, td {
 .isinvisible {
   @apply opacity-0;
 }
+
 .located {
   @apply bg-black/5 dark:bg-white/10;
 }

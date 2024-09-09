@@ -7,9 +7,9 @@
 .header > div > div {
     @apply flex items-center;
   }
-.header > div > div > span {
+.header > div > div > h1 {
   @apply text-[20px];
-  font-family: '__Noto_Sans_4cce57', serif;
+  font-family: serif;
 }
 .header > div > div > button {
   @apply w-[40px] h-[40px] justify-center
