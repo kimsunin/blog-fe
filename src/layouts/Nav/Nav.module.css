@@ -1,44 +1,12 @@
-@screen pc {
-  .nav {
-    @apply my-[40px];
-  }
-  .nav > ul > li {
-    @apply my-[10px] flex;
-  }
-  .nav > ul > li > div {
-    @apply min-w-[100px];
-  }
-  .nav > ul > li > div > a {
-    @apply font-mono
-  }
+.nav {
+  @apply my-[40px];
 }
-
-@screen tablet {
-  .nav {
-    @apply my-[40px];
-  }
-  .nav > ul > li {
-    @apply my-[10px] flex;
-  }
-  .nav > ul > li > div {
-    @apply min-w-[100px];
-  }
-  .nav > ul > li > div > a {
-    @apply font-mono
-  }
+.nav > ul > li {
+  @apply my-[10px] flex;
 }
-
-@screen mobile {
-  .nav {
-    @apply my-[40px];
-  }
-  .nav > ul > li {
-    @apply my-[10px] flex;
-  }
-  .nav > ul > li > div {
-    @apply min-w-[100px];
-  }
-  .nav > ul > li > div > a {
-    @apply font-mono
-  }
+.nav > ul > li > div {
+  @apply min-w-[100px];
+}
+.nav > ul > li > div > a {
+  @apply font-mono
 }
