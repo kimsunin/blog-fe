@@ -9,7 +9,7 @@
   }
 .header > div > div > h1 {
   @apply text-[20px];
-  font-family: serif;
+  font-family: '__Noto_Sans_4cce57', serif;
 }
 .header > div > div > button {
   @apply w-[40px] h-[40px] justify-center
