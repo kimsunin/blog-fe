@@ -45,5 +45,5 @@ tr, th, td {
 }
 
 strong {
-  @apply font-[600]
+  @apply font-[500]
 }

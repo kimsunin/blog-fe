@@ -8,7 +8,7 @@
     @apply flex items-center;
   }
 .header > div > div > h1 {
-  @apply text-[20px] font-[400];
+  @apply text-[20px] font-[500];
 }
 .header > div > div > button {
   @apply w-[40px] h-[40px] justify-center
