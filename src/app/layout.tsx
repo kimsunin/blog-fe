@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import {Noto_Sans} from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/layouts/ThemeProvider/ThemeProvider";
 import RootContainer from "@/layouts/RootContainer/RootContainer";
@@ -8,9 +8,10 @@ import BlurLayer from "@/layouts/BlurLayer/BlurLayer";
 import SoundProvider from "@/layouts/SoundProvider/SoundProvider";
 import DialogProvider from "@/layouts/DialogProvider/DialogProvider";
 
-const inter = Noto_Sans({
-  subsets: ["latin"],
-  weight:"400"
+const pretendard = localFont({
+  src: "../../public/font/PretendardVariable.woff2",
+  display: "swap",
+  variable: "--font-pretendard",
 });
 
 export const metadata: Metadata = {
@@ -43,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-    <body className={inter.className}>
+    <html lang="kr" className={`${pretendard.variable}`}>
+    <body className={pretendard.className}>
     <ThemeProvider>
       <SoundProvider>
         <DialogProvider>

@@ -1,6 +1,7 @@
 .root_container {
-  @apply transition-w duration-500 font-sans;
+  @apply transition-w duration-500 font-[300];
 }
+
 
 @screen pc {
   .root_container {

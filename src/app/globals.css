@@ -43,3 +43,7 @@ tr, th, td {
 .located {
   @apply bg-black/5 dark:bg-white/10;
 }
+
+strong {
+  @apply font-[600]
+}
