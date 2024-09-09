@@ -1,4 +1,5 @@
-@screen pc {
+
+
   .main_footer {
     @apply w-full mt-[40px];
   }
@@ -8,28 +9,7 @@
   .main_footer > div > a {
     @apply p-[4px] mr-[6px];
   }
-}
 
-@screen tablet {
-  .main_footer {
-    @apply w-full mt-[40px];
-  }
-  .main_footer > div {
-    @apply mt-[10px];
-  }
-  .main_footer > div > a {
-    @apply p-[4px]  mr-[6px];
-  }
-}
 
-@screen mobile {
-  .main_footer {
-    @apply w-full mt-[40px];
-  }
-  .main_footer > div {
-    @apply mt-[10px];
-  }
-  .main_footer > div > a {
-    @apply p-[4px]  mr-[6px];
-  }
-}
+
+
