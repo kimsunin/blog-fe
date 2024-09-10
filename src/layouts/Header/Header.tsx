@@ -1,11 +1,12 @@
 "use client";
 import {useState} from "react";
+import Link from "next/link";
 import {useRouter} from "next/navigation";
 import SoundSwitch from "@/components/SoundSwitch/SoundSwitch";
 import ThemeSwitch from "@/components/ThemeSwitch/ThemeSwitch";
 import styles from "./Header.module.css";
 import {RocketIc, SearchIc} from "svg/index";
-3
+
 
 
 function Header() {
@@ -25,10 +26,10 @@ function Header() {
   return (
     <header className={styles.header}>
       <div>
-        <div>
+        <Link href="/">
           <RocketIc/>
           <h1>KIMSI.ME</h1>
-        </div>
+        </Link>
         <div>
           <button onClick={() => setOnClick(!onClick)}><SearchIc/></button>
           <SoundSwitch/>

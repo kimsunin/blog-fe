@@ -2,14 +2,22 @@
   @apply w-full;
 }
 .header > div {
-    @apply w-full h-full flex justify-between items-center;
-  }
+  @apply w-full h-full flex justify-between items-center;
+}
+.header > div > a {
+  @apply px-0
+}
+.header > div > a:hover {
+  @apply scale-100 bg-transparent; /* Override hover styles */
+  transition: none; /* Disable hover transition */
+}
+.header > div > a > h1 {
+  @apply text-[20px] ml-[6px] font-[350];
+}
+
 .header > div > div {
     @apply flex items-center;
   }
-.header > div > div > h1 {
-  @apply text-[20px] ml-[6px] font-[350];
-}
 .header > div > div > button {
   @apply w-[40px] h-[40px] justify-center
 }
