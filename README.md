@@ -2,15 +2,13 @@
 
 [https://blog.kimsi.me](https://blog.kimsi.me)
 
----
 
 ### Develop space of kimsunin - 김선인의 개발공간
 
 단순히 만드는 것에 그치지 않으며 기록하고 기억하고자 합니다.
 
----
 
-### [번외]
+## [번외]
 
 사용자의 경험을 중요하게 생각합니다
 
@@ -18,9 +16,8 @@
 
 사색과 고민, 기록과 기억을 중요하게 생각합니다
 
----
 
-### 0. Page
+## 0. Page
 
 home([https://blog.kimsi.me](https://blog.kimsi.me)) - 김선인의 간략한 소개, 링크
 
@@ -30,7 +27,6 @@ note([https://blog.kimsi.me/note](https://blog.kimsi.me/note)) - 자유롭게 �
 
 craf([https://blog.kimsi.me/craf](https://blog.kimsi.me/craf)) - 직접 만들고 보여주기 위한 공간
 
----
 
 ## 1. configure
 
@@ -54,8 +50,6 @@ craf([https://blog.kimsi.me/craf](https://blog.kimsi.me/craf)) - 직접 만들�
 |-----|--------|---------|------|---------|
 | int | string | string  | date | string  |
 
-
----
 
 ### 2. markdown
 
