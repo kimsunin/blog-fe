@@ -8,8 +8,7 @@
   @apply px-0
 }
 .header > div > a:hover {
-  @apply scale-100 bg-transparent; /* Override hover styles */
-  transition: none; /* Disable hover transition */
+  @apply bg-transparent transform-none ;
 }
 .header > div > a > h1 {
   @apply text-[20px] ml-[6px] font-[350];
