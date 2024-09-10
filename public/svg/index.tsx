@@ -8,6 +8,7 @@ import SoundOffIc from "./soundoff.svg";
 import ErrorImgIc from "./errorimg.svg"
 import CalendarIc from "./calendar.svg";
 import SearchIc from "./search.svg";
+import RocketIc from "./rocket.svg"
 
 export {
   SunIc,
@@ -19,5 +20,6 @@ export {
   SoundOffIc,
   ErrorImgIc,
   CalendarIc,
-  SearchIc
+  SearchIc,
+  RocketIc,
 };
