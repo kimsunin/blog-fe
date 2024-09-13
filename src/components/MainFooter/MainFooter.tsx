@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./MainFooter.module.css";
-import { GithubIc, NotionIc } from "svg/index";
+import {GithubIc, NotionIc, PersonIc} from "svg/index";
 
 function MainFooter() {
   return (
@@ -16,6 +16,9 @@ function MainFooter() {
         </Link>
         <Link href="https://www.notion.so/suninkim/kimsunin-947b333fef434eef9c0d5c935dfc30d0?pm=c" target="_blank">
           <NotionIc/>
+        </Link>
+        <Link href="/about">
+          <PersonIc/>
         </Link>
       </div>
     </div>

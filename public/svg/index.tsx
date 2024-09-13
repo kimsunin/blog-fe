@@ -9,6 +9,7 @@ import ErrorImgIc from "./errorimg.svg"
 import CalendarIc from "./calendar.svg";
 import SearchIc from "./search.svg";
 import RocketIc from "./rocket.svg"
+import PersonIc from "./person.svg";
 
 export {
   SunIc,
@@ -22,4 +23,5 @@ export {
   CalendarIc,
   SearchIc,
   RocketIc,
+  PersonIc
 };

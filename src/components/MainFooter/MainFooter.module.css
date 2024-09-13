@@ -7,7 +7,7 @@
     @apply mt-[10px];
   }
   .main_footer > div > a {
-    @apply p-[4px] mr-[6px];
+    @apply w-[40px] h-[40px] justify-center p-[4px] mr-[6px];
   }
 
 
