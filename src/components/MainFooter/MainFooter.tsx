@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import styles from "./MainFooter.module.css";
-import {GithubIc, NotionIc, PersonIc} from "svg/index";
+import {EmailIc, GithubIc, NotionIc, PersonIc} from "svg/index";
 
 function MainFooter() {
   return (
@@ -19,6 +19,9 @@ function MainFooter() {
         </Link>
         <Link href="/about">
           <PersonIc/>
+        </Link>
+        <Link href="mailto:suninkim10@gmail.com">
+          <EmailIc/>
         </Link>
       </div>
     </div>
