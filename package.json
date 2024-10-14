@@ -11,7 +11,7 @@
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.5",
+    "@next/mdx": "^14.2.15",
     "@react-three/drei": "^9.111.1",
     "@react-three/fiber": "^8.16.8",
     "@supabase/supabase-js": "^2.45.1",
