@@ -11,6 +11,7 @@ jobs:
   build:
     #리눅스 우분투 사용
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
