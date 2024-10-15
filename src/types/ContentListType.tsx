@@ -3,4 +3,9 @@ type ContentListType = {
   content: SubContentType;
 }[];
 
-type SubContentType = { id: number; title: string; date: string, img_url: string | null; }[];
+type SubContentType = {
+  id: number;
+  title: string;
+  date: string;
+  img_url: string | null;
+}[];

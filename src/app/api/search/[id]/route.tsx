@@ -1,19 +1,25 @@
-import {NextRequest, NextResponse} from "next/server";
-import {supabase} from "@/utils/supabase";
+import { NextRequest, NextResponse } from "next/server";
+import { supabase } from "@/utils/supabase";
 
-
-export async function GET(req: NextRequest, {params}: { params: { id: string } }) {
-
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
   console.log(req.json());
 
-  const datas: any = {deve: {type: "deve", data: []}, note: {type: "note", data: []}, craf: {type: "craf", data: []}};
+  const datas: any = {
+    deve: { type: "deve", data: [] },
+    note: { type: "note", data: [] },
+    craf: { type: "craf", data: [] },
+  };
 
   const getDeve = async () => {
-    let {data, error} = await supabase.from("deve")
-      .select('*')
+    let { data, error } = await supabase
+      .from("deve")
+      .select("*")
       .or(`title.ilike.%${params.id}%, content.ilike.%${params.id}%`);
 
-    let groupData: any = {}
+    let groupData: any = {};
 
     data?.forEach((item: any) => {
       const year = item.date.slice(0, 4);
@@ -25,24 +31,25 @@ export async function GET(req: NextRequest, {params}: { params: { id: string } }
         id: item.id,
         title: item.title,
         date: item.date,
-        img_url: item.img_url
+        img_url: item.img_url,
       });
     });
 
-    let transformData = Object.keys(groupData).map(year => ({
+    let transformData = Object.keys(groupData).map((year) => ({
       year: year,
-      content: groupData[year]
+      content: groupData[year],
     }));
 
     datas.deve.data = transformData;
   };
 
   const getNote = async () => {
-    let {data, error} = await supabase.from("note")
-      .select('*')
+    let { data, error } = await supabase
+      .from("note")
+      .select("*")
       .or(`title.ilike.%${params.id}%, content.ilike.%${params.id}%`);
 
-    let groupData: any = {}
+    let groupData: any = {};
 
     data?.forEach((item: any) => {
       const year = item.date.slice(0, 4);
@@ -54,24 +61,25 @@ export async function GET(req: NextRequest, {params}: { params: { id: string } }
         id: item.id,
         title: item.title,
         date: item.date,
-        img_url: item.img_url
+        img_url: item.img_url,
       });
     });
 
-    let transformData = Object.keys(groupData).map(year => ({
+    let transformData = Object.keys(groupData).map((year) => ({
       year: year,
-      content: groupData[year]
+      content: groupData[year],
     }));
 
     datas.note.data = transformData;
   };
 
   const getCraf = async () => {
-    let {data, error} = await supabase.from("craf")
-      .select('*')
+    let { data, error } = await supabase
+      .from("craf")
+      .select("*")
       .or(`title.ilike.%${params.id}%, content.ilike.%${params.id}%`);
 
-    let groupData: any = {}
+    let groupData: any = {};
 
     data?.forEach((item: any) => {
       const year = item.date.slice(0, 4);
@@ -83,13 +91,13 @@ export async function GET(req: NextRequest, {params}: { params: { id: string } }
         id: item.id,
         title: item.title,
         date: item.date,
-        img_url: item.img_url
+        img_url: item.img_url,
       });
     });
 
-    let transformData = Object.keys(groupData).map(year => ({
+    let transformData = Object.keys(groupData).map((year) => ({
       year: year,
-      content: groupData[year]
+      content: groupData[year],
     }));
 
     datas.craf.data = transformData;
@@ -99,9 +107,17 @@ export async function GET(req: NextRequest, {params}: { params: { id: string } }
   await getNote();
   await getDeve();
 
-  if (datas.deve.data.length > 0 || datas.note.data.length > 0 || datas.craf.data.length > 0) {
-    return NextResponse.json({data: datas, message: "success", status: 200});
+  if (
+    datas.deve.data.length > 0 ||
+    datas.note.data.length > 0 ||
+    datas.craf.data.length > 0
+  ) {
+    return NextResponse.json({ data: datas, message: "success", status: 200 });
   } else {
-    return NextResponse.json({error: datas, message: "글이 존재하지 않습니다", status: 404});
+    return NextResponse.json({
+      error: datas,
+      message: "글이 존재하지 않습니다",
+      status: 404,
+    });
   }
 }
