@@ -1,72 +1,64 @@
 name: Docker Image CI
 
 on:
-#dev로 푸시 및 풀 리퀘스트 event 발생시 동작
+  #dev로 푸시 및 풀 리퀘스트 event 발생시 동작
   push:
-    branches: [ "dev" ]
+    branches: ["dev"]
   pull_request:
-    branches: [ "dev" ]
-
+    branches: ["dev"]
 
 jobs:
   build:
-#리눅스 우분투 사용
+    #리눅스 우분투 사용
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Checkout
-      uses: actions/checkout@v4
+      #1. touch .env
+      - name: Make .env
+        run: |
+          touch ./.env
+          echo "${{ secrets.ENV }}" >> ./.env
+        shell: bash
 
-#1. touch .env
-    - name: Make .env
-      run: |
-        touch ./.env
-        echo "${{ secrets.ENV }}" >> ./.env
-      shell: bash
+      #도커 빌드 셋업
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
 
-#도커 빌드 셋업
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      #2. docker login
+      - name: Login to Dockerhub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD}}
 
-#2. docker login
-    - name: Login to Dockerhub
-      uses: docker/login-action@v1
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD}}
+      #3. docker build and push
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/blog-fe:latest
 
-#3. docker build and push
-    - name: Build and push
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        file: ./Dockerfile
-        platforms: linux/amd64
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/blog-fe:latest
+          #build용 캐시를 사용, 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-#build용 캐시를 사용, 여기서 gha 는 Guthub Actions 용 캐시를 의미합니다.
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
-
-
-#4. docker pull and run
-    - name: Pull and Run
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.SSH_USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        port: ${{ secrets.SSH_PORT }}
-        script: |
+      #4. docker pull and run
+      - name: Pull and Run
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
             cd ~/docker-compose/blog
             docker-compose down
             docker rmi $(docker images | grep "${{ secrets.DOCKER_USERNAME }}/blog-fe" | awk '{print $3}')
             docker-compose up -d
             exit
-          
-            
-          
-
-

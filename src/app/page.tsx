@@ -14,13 +14,17 @@ export default function Home() {
     <main id="main">
       <section className={visible ? "isvisible" : "isinvisible"}>
         <article>
-          <p><strong>김선인</strong>의 개발공간</p>
+          <p>
+            <strong>김선인</strong>의 개발공간
+          </p>
           <p>
             {"단순히 만드는 것에 그치지 않으며\n"}
-            <strong>기록</strong>{"하고\n"}<strong>기억</strong>하고자 합니다.
+            <strong>기록</strong>
+            {"하고\n"}
+            <strong>기억</strong>하고자 합니다.
           </p>
         </article>
-        <MainFooter/>
+        <MainFooter />
       </section>
     </main>
   );
