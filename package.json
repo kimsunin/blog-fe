@@ -17,7 +17,7 @@
     "@supabase/supabase-js": "^2.45.1",
     "@types/mdx": "^2.0.13",
     "@types/react-syntax-highlighter": "^15.5.13",
-    "@types/three": "^0.167.1",
+    "@types/three": "^0.169.0",
     "@uiw/react-md-editor": "^4.0.4",
     "axios": "^1.7.2",
     "dayjs": "^1.11.13",
@@ -36,7 +36,7 @@
     "remark-gfm": "^4.0.0",
     "sharp": "^0.33.5",
     "supabase": "^1.187.10",
-    "three": "^0.167.1"
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
